@@ -34,7 +34,7 @@
   .bs-flyout::before { content: ""; position: absolute; top: 0; left: -9px; bottom: 0; width: 9px; }
 </style>
 </helmet>
-<div style="background: #F4EEE1; color: #23201A; font-family: 'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden;">
+<div style="background: #F4EEE1; color: #23201A; font-family: 'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip;">
 
   <!-- ===================== NAV ===================== -->
   <header style="position: sticky; top: 0; z-index: 50; background: rgba(244,238,225,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(35,32,26,0.12);">
@@ -223,14 +223,25 @@
                 <input type="tel" name="phone" placeholder="Phone number" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A; flex: 1 1 auto; min-width: 0;">
               </div>
             </label>
-            <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Film Type
-              <select style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A;" name="product">
-                <sc-for list="{{ films }}" as="f2" hint-placeholder-count="4">
-                  <option>{{ f2.name }}</option>
-                </sc-for>
-                <option>General Enquiry</option>
-              </select>
-            </label>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Purpose
+                <select style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A;" name="purpose">
+                  <option>Product Enquiry</option>
+                  <option>Request a Quotation</option>
+                  <option>Become a Distributor</option>
+                  <option>Technical Discussion</option>
+                  <option>General Enquiry</option>
+                </select>
+              </label>
+              <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Film Type
+                <select style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A;" name="product">
+                  <sc-for list="{{ films }}" as="f2" hint-placeholder-count="4">
+                    <option>{{ f2.name }}</option>
+                  </sc-for>
+                  <option>General Enquiry</option>
+                </select>
+              </label>
+            </div>
             <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Message
               <textarea name="message" rows="4" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A; resize: vertical;"></textarea>
             </label>
