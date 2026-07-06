@@ -31,6 +31,20 @@
   .bs-flyout { position: absolute; top: -9px; left: calc(100% + 9px); min-width: 200px; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.14); border-radius: 6px; box-shadow: 0 18px 44px rgba(20,18,14,0.16); padding: 8px; opacity: 0; visibility: hidden; transform: translateX(6px); transition: opacity .18s ease, transform .18s ease; z-index: 61; }
   .bs-sub:hover .bs-flyout { opacity: 1; visibility: visible; transform: translateX(0); }
   .bs-flyout::before { content: ""; position: absolute; top: 0; left: -9px; bottom: 0; width: 9px; }
+  @media (max-width: 820px) {
+    header nav { flex-wrap: wrap !important; justify-content: center !important; gap: 10px 16px !important; padding: 12px 18px !important; }
+    header nav > a { flex: 1 0 100% !important; justify-content: center !important; }
+    header nav > div { flex-wrap: wrap !important; justify-content: center !important; gap: 10px 16px !important; }
+    [style*="grid-template-columns: repeat(5, 1fr)"] { grid-template-columns: 1fr !important; }
+    [style*="grid-template-columns: repeat(7, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; }
+    [style*="grid-template-columns: repeat(2, 1fr)"] { grid-template-columns: 1fr !important; }
+    [style*="grid-template-columns: 1fr 1fr"] { grid-template-columns: 1fr !important; }
+    [style*="grid-row: span 3"], [style*="grid-row: span 4"], [style*="grid-row: span 5"] { grid-row: auto !important; grid-template-rows: none !important; }
+    [style*="grid-column: span 2"] { grid-column: auto !important; }
+    [style*="border-left: 1px solid rgba(35,32,26,0.16)"] { border-left: none !important; border-top: 1px solid rgba(35,32,26,0.16) !important; padding-top: 24px !important; margin-top: 8px !important; }
+    [style*="max-width: 1240px"] { padding-left: 20px !important; padding-right: 20px !important; }
+    [style*="max-width: 1240px"][style*="1.6fr"] { grid-template-columns: 1fr !important; }
+  }
 </style>
 </helmet>
 <div style="background: #F4EEE1; color: #23201A; font-family: 'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip;">
