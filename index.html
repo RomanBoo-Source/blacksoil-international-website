@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<!-- BUILD: mobile-v4 (products id-fix) -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -73,6 +74,8 @@
     [style*="minmax(340px, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="minmax(300px, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="minmax(250px, 1fr)"] { grid-template-columns: 1fr !important; }
+    #products > div > div { grid-template-columns: 1fr !important; }
+    #products a { grid-column: auto !important; }
     [style*="min-width: 150px"] { flex: 1 0 100% !important; border-left: none !important; padding: 14px 0 !important; }
     [style*="minmax(210px, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="minmax(210px, 1fr)"] > div { border-left: none !important; border-top: 1px solid rgba(35,32,26,0.16) !important; padding: 24px 0 !important; margin: 0 !important; }
