@@ -7,7 +7,7 @@ window.LOWTUNNEL_DATA = {
   "films": [
     {
       "num": "01",
-      "name": "ANVIX™ Standard Film",
+      "name": "Standard Film",
       "desc": "A cost-effective solution for general crop protection and early-season cultivation. Manufactured from high-quality polyethylene resins, it provides excellent transparency, mechanical strength and weather resistance while allowing maximum natural light transmission.",
       "thickness": "15 µm – 25 µm",
       "features": ["High light transmission", "Good mechanical strength", "Excellent transparency", "Easy installation", "Cost-effective solution"],
@@ -16,7 +16,7 @@ window.LOWTUNNEL_DATA = {
     },
     {
       "num": "02",
-      "name": "ANVIX™ Thermic Film",
+      "name": "Thermic Film",
       "desc": "Incorporates specialised Infrared (IR) retention technology designed to reduce heat loss during the night. By retaining thermal radiation within the tunnel, it maintains stable night-time temperatures — improving night temperatures by approximately 2–4°C under suitable conditions.",
       "thickness": "30 µm – 80 µm",
       "features": ["IR heat retention technology", "Improved night-time temperature stability", "Reduced temperature fluctuations", "Enhanced protection during cooler periods", "Suitable for early-season cultivation"],
@@ -25,7 +25,7 @@ window.LOWTUNNEL_DATA = {
     },
     {
       "num": "03",
-      "name": "ANVIX™ Cooling Film",
+      "name": "Cooling Film",
       "desc": "Engineered with PAR and NIR management technology to reduce excessive heat build-up within the tunnel. By filtering near-infrared radiation, it maintains cooler temperatures during hot weather — ideal for tropical and subtropical growing environments.",
       "thickness": "20 µm – 50 µm",
       "features": ["PAR and NIR management technology", "Reduced heat accumulation", "Improved temperature control", "Enhanced crop comfort", "Better environmental stability"],
@@ -34,7 +34,7 @@ window.LOWTUNNEL_DATA = {
     },
     {
       "num": "04",
-      "name": "ANVIX™ Perforated Film",
+      "name": "Perforated Film",
       "desc": "Features strategically designed perforations that improve air circulation and moisture management within the tunnel. The perforation system regulates temperature, reduces condensation and maintains healthier growing conditions. Available in various perforation patterns.",
       "thickness": "15 µm – 25 µm",
       "features": ["Enhanced ventilation", "Improved moisture control", "Reduced condensation", "Better temperature regulation", "Optimised tunnel environment"],
