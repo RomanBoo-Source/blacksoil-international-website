@@ -58,6 +58,7 @@
     [style*="grid-template-columns: repeat(5, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns: repeat(7, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; background: transparent !important; gap: 8px !important; }
     [style*="grid-template-columns: repeat(7, 1fr)"] > div:last-child { grid-column: 1 / -1 !important; align-items: center !important; text-align: center !important; }
+    [style*="transition: transform 0.35s cubic-bezier(0.22,1,0.36,1)"]:hover { transform: none !important; box-shadow: none !important; }
     [style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns: repeat(3, 1fr)"] > div { border-left: none !important; padding-left: 0 !important; }
     [style*="grid-template-columns: repeat(2, 1fr)"] { grid-template-columns: 1fr !important; }
@@ -164,7 +165,7 @@
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px;">
         <sc-for list="{{ grades }}" as="g" hint-placeholder-count="2">
-          <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 34px 32px 36px; display: flex; flex-direction: column;">
+          <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 34px 32px 36px; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
             <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.08em; color: var(--accent);">{{ g.tag }}</div>
             <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: rgba(35,32,26,0.5); margin-top: 10px;">{{ g.badge }}</div>
             <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 27px; line-height: 1.1; margin-top: 12px;">{{ g.name }}</div>
