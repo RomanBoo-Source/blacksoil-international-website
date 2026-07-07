@@ -58,6 +58,7 @@
     [style*="grid-template-columns: repeat(5, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns: repeat(7, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; background: transparent !important; gap: 8px !important; }
     [style*="grid-template-columns: repeat(7, 1fr)"] > div:last-child { grid-column: 1 / -1 !important; align-items: center !important; text-align: center !important; }
+    [style*="transition: transform 0.35s cubic-bezier(0.22,1,0.36,1)"]:hover { transform: none !important; box-shadow: none !important; }
     [style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns: repeat(3, 1fr)"] > div { border-left: none !important; padding-left: 0 !important; }
     [style*="grid-template-columns: repeat(2, 1fr)"] { grid-template-columns: 1fr !important; }
@@ -177,7 +178,7 @@
 
       <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
         <sc-for list="{{ films }}" as="f" hint-placeholder-count="4">
-          <div style="grid-row: span 5; display: grid; grid-template-rows: subgrid; row-gap: 16px; align-content: start; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 30px 28px 32px;">
+          <div style="grid-row: span 5; display: grid; grid-template-rows: subgrid; row-gap: 16px; align-content: start; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 30px 28px 32px; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
             <div style="display: flex; align-items: baseline; gap: 12px;">
               <span style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">{{ f.num }}</span>
               <span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 23px; line-height: 1.1;">{{ f.name }}</span>

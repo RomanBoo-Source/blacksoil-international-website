@@ -58,6 +58,7 @@
     [style*="grid-template-columns: repeat(5, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns: repeat(7, 1fr)"] { grid-template-columns: repeat(2, 1fr) !important; background: transparent !important; gap: 8px !important; }
     [style*="grid-template-columns: repeat(7, 1fr)"] > div:last-child { grid-column: 1 / -1 !important; align-items: center !important; text-align: center !important; }
+    [style*="transition: transform 0.35s cubic-bezier(0.22,1,0.36,1)"]:hover { transform: none !important; box-shadow: none !important; }
     [style*="grid-template-columns: repeat(3, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns: repeat(3, 1fr)"] > div { border-left: none !important; padding-left: 0 !important; }
     [style*="grid-template-columns: repeat(2, 1fr)"] { grid-template-columns: 1fr !important; }
@@ -226,7 +227,7 @@
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-        <a href="greenhouse-films.html" style="grid-column: span 2; text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;" style-hover="border-color: var(--accent);">
+        <a href="greenhouse-films.html" style="grid-column: span 2; text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
           <div style="position: relative; width: 100%; height: 260px;">
             <image-slot id="prod-greenhouse" src="greenhouse.jpg" placeholder="Greenhouse film — installation photo" style="width: 100%; height: 100%;" fit="cover"></image-slot>
             <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
@@ -238,7 +239,7 @@
           </div>
         </a>
 
-        <a href="mulch-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;" style-hover="border-color: var(--accent);">
+        <a href="mulch-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
           <div style="position: relative; width: 100%; height: 200px;">
             <image-slot id="prod-mulch" src="mulch.jpg" placeholder="Mulch film — field rows" style="width: 100%; height: 100%;" fit="cover"></image-slot>
             <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
@@ -250,7 +251,7 @@
           </div>
         </a>
 
-        <a href="silage-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;" style-hover="border-color: var(--accent);">
+        <a href="silage-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
           <div style="position: relative; width: 100%; height: 200px;">
             <image-slot id="prod-silage" src="silage.jpg" placeholder="Silage film — wrapped bales" style="width: 100%; height: 100%;" fit="cover"></image-slot>
             <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
@@ -262,7 +263,7 @@
           </div>
         </a>
 
-        <a href="low-tunnel-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;" style-hover="border-color: var(--accent);">
+        <a href="low-tunnel-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
           <div style="position: relative; width: 100%; height: 200px;">
             <image-slot id="prod-lowtunnel" src="lowtunnel.jpg" placeholder="Low tunnel film — protected rows" style="width: 100%; height: 100%;" fit="cover"></image-slot>
             <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
@@ -274,7 +275,7 @@
           </div>
         </a>
 
-        <a href="pond-liner-geomembrane.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column;" style-hover="border-color: var(--accent);">
+        <a href="pond-liner-geomembrane.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
           <div style="position: relative; width: 100%; height: 200px;">
             <image-slot id="prod-geomembrane" src="geomembrane.jpg" placeholder="Pond liner / geomembrane — reservoir" style="width: 100%; height: 100%;" fit="cover"></image-slot>
             <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
