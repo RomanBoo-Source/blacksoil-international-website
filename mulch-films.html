@@ -238,9 +238,12 @@
 
         <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 36px;">
           <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
-            <div style="min-height: 380px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center;">
-              <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: var(--accent);">RECEIVED</div>
-              <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 26px; margin: 14px 0 10px;">Thank you for your enquiry.</h3>
+            <div style="min-height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+              <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(31,138,91,0.12); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#1F8A5B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"></path></svg>
+              </div>
+              <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: #1F8A5B;">SENT SUCCESSFULLY</div>
+              <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 26px; margin: 12px 0 10px; color: #1F8A5B;">Thank you for your enquiry.</h3>
               <p style="font-size: 15px; color: rgba(35,32,26,0.66); line-height: 1.6; margin: 0;">Our team will review your request and contact you shortly.</p>
             </div>
           </sc-if>
@@ -256,16 +259,19 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Name
                 <input type="text" name="name" required="" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A;">
+              <sc-if value="{{ errName }}" hint-placeholder-val=""><span style="font-size: 12px; font-weight: 500; letter-spacing: 0; text-transform: none; color: #b22222;">{{ errName }}</span></sc-if>
               </label>
               <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Country
                 <select style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A;" name="country">
                   <option value="" disabled="" selected="">Select country…</option>
                   <option>Afghanistan</option><option>Albania</option><option>Algeria</option><option>Andorra</option><option>Angola</option><option>Argentina</option><option>Armenia</option><option>Australia</option><option>Austria</option><option>Azerbaijan</option><option>Bahrain</option><option>Bangladesh</option><option>Belarus</option><option>Belgium</option><option>Bhutan</option><option>Bolivia</option><option>Bosnia and Herzegovina</option><option>Botswana</option><option>Brazil</option><option>Brunei</option><option>Bulgaria</option><option>Cambodia</option><option>Cameroon</option><option>Canada</option><option>Chile</option><option>China</option><option>Colombia</option><option>Costa Rica</option><option>Croatia</option><option>Cyprus</option><option>Czechia</option><option>Denmark</option><option>Ecuador</option><option>Egypt</option><option>Estonia</option><option>Ethiopia</option><option>Fiji</option><option>Finland</option><option>France</option><option>Georgia</option><option>Germany</option><option>Ghana</option><option>Greece</option><option>Guatemala</option><option>Hungary</option><option>Iceland</option><option>India</option><option>Indonesia</option><option>Iran</option><option>Iraq</option><option>Ireland</option><option>Israel</option><option>Italy</option><option>Japan</option><option>Jordan</option><option>Kazakhstan</option><option>Kenya</option><option>Kuwait</option><option>Laos</option><option>Latvia</option><option>Lebanon</option><option>Lithuania</option><option>Luxembourg</option><option>Malaysia</option><option>Maldives</option><option>Malta</option><option>Mexico</option><option>Moldova</option><option>Mongolia</option><option>Morocco</option><option>Myanmar</option><option>Nepal</option><option>Netherlands</option><option>New Zealand</option><option>Nigeria</option><option>Norway</option><option>Oman</option><option>Pakistan</option><option>Panama</option><option>Papua New Guinea</option><option>Paraguay</option><option>Peru</option><option>Philippines</option><option>Poland</option><option>Portugal</option><option>Qatar</option><option>Romania</option><option>Russia</option><option>Saudi Arabia</option><option>Senegal</option><option>Serbia</option><option>Singapore</option><option>Slovakia</option><option>Slovenia</option><option>South Africa</option><option>South Korea</option><option>Spain</option><option>Sri Lanka</option><option>Sweden</option><option>Switzerland</option><option>Taiwan</option><option>Tanzania</option><option>Thailand</option><option>Tunisia</option><option>Turkey</option><option>Uganda</option><option>Ukraine</option><option>United Arab Emirates</option><option>United Kingdom</option><option>United States</option><option>Uruguay</option><option>Uzbekistan</option><option>Vietnam</option><option>Yemen</option><option>Zambia</option><option>Zimbabwe</option>
                 </select>
+              <sc-if value="{{ errCountry }}" hint-placeholder-val=""><span style="font-size: 12px; font-weight: 500; letter-spacing: 0; text-transform: none; color: #b22222;">{{ errCountry }}</span></sc-if>
               </label>
             </div>
             <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Email
               <input type="email" name="email" required="" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A;">
+              <sc-if value="{{ errEmail }}" hint-placeholder-val=""><span style="font-size: 12px; font-weight: 500; letter-spacing: 0; text-transform: none; color: #b22222;">{{ errEmail }}</span></sc-if>
             </label>
             <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Phone
               <div style="display: flex; gap: 10px;">
@@ -286,6 +292,7 @@
                 </select>
                 <input type="tel" name="phone" placeholder="Phone number" style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A; flex: 1 1 auto; min-width: 0;">
               </div>
+              <sc-if value="{{ errPhone }}" hint-placeholder-val=""><span style="font-size: 12px; font-weight: 500; letter-spacing: 0; text-transform: none; color: #b22222;">{{ errPhone }}</span></sc-if>
             </label>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Purpose
@@ -405,12 +412,27 @@ class Component extends DCLogic {
       submitted: this.state.submitted,
       notSubmitted: !this.state.submitted,
       formError: this.state.formError || '',
+      errName: this.state.errName || '',
+      errEmail: this.state.errEmail || '',
+      errCountry: this.state.errCountry || '',
+      errPhone: this.state.errPhone || '',
       sending: !!this.state.sending,
       onSubmit: (e) => {
         e.preventDefault();
         const form = e.target;
-        if (form.reportValidity && !form.reportValidity()) return;
-        self.setState({ sending: true, formError: '' });
+        const val = (n) => { const el = form.querySelector('[name="' + n + '"]'); return el ? String(el.value).trim() : ''; };
+        const fe = { errName: '', errEmail: '', errCountry: '', errPhone: '' };
+        if (!val('name')) fe.errName = 'Please enter your name.';
+        const email = val('email');
+        if (!email) fe.errEmail = 'Please enter your email address.';
+        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) fe.errEmail = 'Please enter a valid email address.';
+        if (form.querySelector('[name="country"]') && !val('country')) fe.errCountry = 'Please select your country.';
+        if (!val('phone')) fe.errPhone = 'Please enter your phone number.';
+        if (fe.errName || fe.errEmail || fe.errCountry || fe.errPhone) {
+          self.setState(Object.assign({ sending: false, formError: '' }, fe));
+          return;
+        }
+        self.setState({ sending: true, formError: '', errName: '', errEmail: '', errCountry: '', errPhone: '' });
         const fd = new FormData(form);
         const send = (token) => {
           if (token) fd.append('g-recaptcha-response', token);
