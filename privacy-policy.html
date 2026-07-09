@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  :root { --accent: #4B6A2E; --radius: 4px; }
+  image-slot { display: block; }
+  a { color: #4B6A2E; }
+  .bs-nav-item { position: relative; }
+  .bs-dd { position: absolute; top: 100%; left: 50%; transform: translateX(-50%) translateY(6px); min-width: 214px; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.14); border-radius: 6px; box-shadow: 0 18px 44px rgba(20,18,14,0.16); padding: 8px; margin-top: 12px; opacity: 0; visibility: hidden; transition: opacity .18s ease, transform .18s ease; z-index: 60; }
+  .bs-nav-item:hover .bs-dd { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+  .bs-dd::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+  .bs-dd a { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 9px 12px; font-size: 14px; font-weight: 500; color: rgba(35,32,26,0.78); text-decoration: none; border-radius: 4px; white-space: nowrap; }
+  .bs-dd a:hover { background: rgba(75,106,46,0.12); color: #23201A; }
+  .bs-sub { position: relative; }
+  .bs-flyout { position: absolute; top: -9px; left: calc(100% + 9px); min-width: 200px; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.14); border-radius: 6px; box-shadow: 0 18px 44px rgba(20,18,14,0.16); padding: 8px; opacity: 0; visibility: hidden; transform: translateX(6px); transition: opacity .18s ease, transform .18s ease; z-index: 61; }
+  .bs-sub:hover .bs-flyout { opacity: 1; visibility: visible; transform: translateX(0); }
+  .bs-flyout::before { content: ""; position: absolute; top: 0; left: -9px; bottom: 0; width: 9px; }
+  .bs-burger { display: none; }
+  @media (max-width: 820px) {
+    header nav { padding: 10px 16px !important; gap: 12px !important; justify-content: space-between !important; }
+    header nav > a:first-child img { height: 30px !important; }
+    header nav > a:first-child span { font-size: 15px !important; line-height: 1.05 !important; }
+    header nav > div { display: none !important; }
+    .bs-burger { display: block !important; position: relative; }
+    .bs-burger > summary { list-style: none; cursor: pointer; width: 42px; height: 42px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid rgba(35,32,26,0.22); border-radius: 9px; background: rgba(255,255,255,0.45); }
+    .bs-burger > summary::-webkit-details-marker { display: none; }
+    .bs-burger > summary span { display: block; width: 20px; height: 2px; border-radius: 2px; background: #23201A; }
+    .bs-burger[open] > summary span { background: var(--accent); }
+    .bs-burger-menu { position: absolute; top: calc(100% + 10px); right: 0; min-width: 230px; max-height: 76vh; overflow-y: auto; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.14); border-radius: 12px; box-shadow: 0 20px 48px rgba(20,18,14,0.2); padding: 10px; display: flex; flex-direction: column; gap: 2px; z-index: 70; }
+    .bs-burger-menu a { padding: 11px 14px; font-size: 15px; font-weight: 500; color: #23201A; text-decoration: none; border-radius: 7px; }
+    .bs-burger-menu a:active, .bs-burger-menu a:hover { background: rgba(75,106,46,0.12); }
+    .bs-burger-branch > summary:hover, .bs-burger-branch[open] > summary { background: rgba(75,106,46,0.1); }
+    .bs-burger-branch { display: flex; flex-direction: column; border-top: 1px solid rgba(35,32,26,0.1); border-bottom: 1px solid rgba(35,32,26,0.1); margin: 4px 0; padding: 2px 0; }
+    .bs-burger-menu .bs-burger-sub { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); padding: 12px 14px 4px; }
+    .bs-burger-menu .bs-burger-cta { background: var(--accent); color: #F5F0E5; text-align: center; margin-top: 8px; font-weight: 600; }
+    .bs-burger-branch > summary { list-style: none; cursor: pointer; padding: 11px 14px; font-size: 15px; font-weight: 500; color: #23201A; border-radius: 7px; display: flex; align-items: center; justify-content: space-between; }
+    .bs-burger-branch > summary::-webkit-details-marker { display: none; }
+    .bs-burger-branch > summary::after { content: "\25B8"; color: var(--accent); font-size: 11px; }
+    .bs-burger-branch[open] > summary::after { content: "\25BE"; }
+    .bs-burger-branch a { display: block !important; padding-left: 26px !important; font-size: 14.5px !important; }
+    [style*="max-width: 1240px"] { padding-left: 20px !important; padding-right: 20px !important; }
+  }
+</style>
+</helmet>
+<div style="background: #F4EEE1; color: #23201A; font-family: 'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: clip;">
+
+  <!-- ===================== NAV ===================== -->
+  <header style="position: sticky; top: 0; z-index: 50; background: rgba(244,238,225,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(35,32,26,0.12);">
+    <nav style="max-width: 1240px; margin: 0 auto; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="index.html#top" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit;">
+        <img src="logo-dark.png" alt="Blacksoil International" style="height: 48px; width: auto; display: block;">
+        <span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.01em; line-height: 1;">BLACKSOIL INTERNATIONAL</span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 28px;">
+        <a href="index.html#company" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Company</a>
+        <div class="bs-nav-item" style="display: inline-flex; align-items: center;">
+        <a href="index.html#products" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;" style-hover="color: #23201A;">Products<svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1.5 6 6.5 11 1.5"></path></svg></a>
+        <div class="bs-dd">
+          <a href="greenhouse-films.html">Greenhouse Films</a>
+          <a href="mulch-films.html">Mulch Films</a>
+          <a href="silage-films.html">Silage Films</a>
+          <a href="low-tunnel-films.html">Low Tunnel Films</a>
+          <div class="bs-sub">
+            <a href="pond-liner-geomembrane.html">Pond Liner &amp; Geomembrane<svg width="8" height="10" viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1 6.5 6 1.5 11"></path></svg></a>
+            <div class="bs-flyout">
+              <a href="hdpe-geomembrane.html">HDPE Geomembrane</a>
+              <a href="lldpe-geomembrane.html">LLDPE Geomembrane</a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <a href="index.html#sectors" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Sectors</a>
+        <a href="index.html#why" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Why Us</a>
+        <a href="index.html#contact" style="text-decoration: none; background: var(--accent); color: #F5F0E5; font-size: 14px; font-weight: 600; padding: 11px 20px; border-radius: var(--radius);" style-hover="filter: brightness(1.08);">Request a Quote</a>
+      </div>
+    <details class="bs-burger">
+        <summary aria-label="Menu"><span></span><span></span><span></span></summary>
+        <div class="bs-burger-menu">
+          <a href="index.html#company">Company</a>
+          <div class="bs-burger-sub">Products</div>
+          <a href="greenhouse-films.html">Greenhouse Films</a>
+          <a href="mulch-films.html">Mulch Films</a>
+          <a href="silage-films.html">Silage Films</a>
+          <a href="low-tunnel-films.html">Low Tunnel Films</a>
+          <details class="bs-burger-branch">
+            <summary>Pond Liner &amp; Geomembrane</summary>
+            <a href="pond-liner-geomembrane.html">Overview</a>
+            <a href="hdpe-geomembrane.html">HDPE Geomembrane</a>
+            <a href="lldpe-geomembrane.html">LLDPE Geomembrane</a>
+          </details>
+          <a href="index.html#sectors">Sectors</a>
+          <a href="index.html#why">Why Us</a>
+          <a href="index.html#contact" class="bs-burger-cta">Request a Quote</a>
+        </div>
+      </details>
+    </nav>
+  </header>
+
+  <!-- ===================== POLICY CONTENT ===================== -->
+  <div style="max-width: 820px; margin: 0 auto; padding: 70px 40px 120px;">
+
+    <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px;">Legal</div>
+    <h1 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 42px; letter-spacing: -0.01em; margin: 0 0 8px; text-transform: uppercase;">Privacy Policy</h1>
+    <p style="font-size: 14px; color: rgba(35,32,26,0.55); margin: 0 0 30px;">Last updated: 17 March 2026</p>
+
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);"><strong>Blacksoil International Sdn. Bhd.</strong> ("we", "our", or "us") is committed to protecting and respecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you interact with us, including through our website, products, services, and other interactions.</p>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">By using our website or engaging with our services, you agree to the collection and use of information in accordance with this policy.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">1. Information We Collect</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">We collect personal information that you voluntarily provide to us when you use our services or interact with us via our website enquiry form. The types of information we may collect include:</p>
+    <ul style="font-size: 16px; line-height: 1.8; color: rgba(35,32,26,0.85); padding-left: 22px;">
+      <li><strong>Personal Identification Information:</strong> Name, email address, phone number, and country.</li>
+      <li><strong>Business Information:</strong> Company name and the product or purpose of your enquiry, where provided.</li>
+      <li><strong>Website Usage Data:</strong> Information collected via cookies or similar technologies about your visit to our website, such as IP address, device information, browser type, and pages visited (see Section 5).</li>
+    </ul>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">We do not process payments or collect billing/shipping information through this website, as our website does not support online purchases.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">2. How We Use Your Information</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">We use the personal information we collect for various purposes, including:</p>
+    <ul style="font-size: 16px; line-height: 1.8; color: rgba(35,32,26,0.85); padding-left: 22px;">
+      <li>To respond to your product enquiries, quotation requests, or feedback.</li>
+      <li>To provide technical or sales support you request.</li>
+      <li>To maintain records of business correspondence.</li>
+      <li>To analyze website usage and enhance user experience.</li>
+      <li>To comply with legal obligations, enforce our terms, and protect our rights and property.</li>
+    </ul>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">We do not use your information for unrelated marketing without your consent.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">3. How We Protect Your Information</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">We take the security of your personal information seriously and implement reasonable technical and organizational measures to safeguard your data. However, please be aware that no method of electronic storage or transmission over the internet is 100% secure.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">4. Sharing Your Information</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">We will not sell, rent, or trade your personal information to third parties. However, we may share your information in the following circumstances:</p>
+    <ul style="font-size: 16px; line-height: 1.8; color: rgba(35,32,26,0.85); padding-left: 22px;">
+      <li><strong>Service Providers:</strong> We use <strong>Web3Forms</strong>, a third-party form-processing service, to securely deliver your enquiry submission to our email inbox. Web3Forms processes your submission data solely to transmit it to us and to filter spam.</li>
+      <li><strong>Legal Compliance:</strong> We may disclose your information if required to do so by law or in response to valid legal requests, such as a subpoena, court order, or government investigation.</li>
+      <li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of our company, your personal information may be transferred to the acquiring entity.</li>
+    </ul>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">5. Cookies and Tracking Technologies</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">Our website uses cookies and similar technologies, including <strong>Google Analytics</strong>, to understand how visitors use our website and to improve its content and performance. Cookies are small files stored on your device that help us track usage patterns such as pages visited, time spent, and general location. You can control the use of cookies through your browser settings, but please note that disabling cookies may impact certain features of our website.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">6. Data Retention</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">We will retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, including legal, accounting, or reporting obligations.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">7. Your Rights and Choices</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">Depending on your location, you may have certain rights regarding your personal information. These rights may include:</p>
+    <ul style="font-size: 16px; line-height: 1.8; color: rgba(35,32,26,0.85); padding-left: 22px;">
+      <li>The right to access or request a copy of your personal information.</li>
+      <li>The right to correct any inaccuracies in your personal information.</li>
+      <li>The right to request the deletion of your personal information, subject to certain conditions.</li>
+      <li>The right to withdraw consent to marketing communications (you can opt-out by contacting us directly).</li>
+    </ul>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">To exercise any of these rights, please contact us at <a href="mailto:sales@blacksoilintl.com" style-hover="color: #3a5423;">sales@blacksoilintl.com</a>.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">8. Third-Party Links</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of those external sites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">9. Product Information &amp; Intellectual Property</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">Product descriptions, specifications, and images on this website are provided for general information purposes. Actual product specifications, availability, and pricing are subject to confirmation at the time of quotation. All content on this website — including text, images, logos, and the ANVIX™ trademark — is the property of Blacksoil International Sdn. Bhd. or its licensors and may not be reproduced or used without prior written consent.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">10. Updates to This Privacy Policy</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">We may update this Privacy Policy from time to time. We will notify you of any material changes by posting the updated policy on our website with an updated "Last updated" date. We encourage you to review this policy periodically.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">11. Governing Law</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">This Privacy Policy is governed by the laws of Malaysia.</p>
+
+    <h2 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 21px; margin: 40px 0 12px;">12. Contact Us</h2>
+    <p style="font-size: 16px; line-height: 1.7; color: rgba(35,32,26,0.85);">If you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us at:</p>
+    <p style="font-size: 16px; line-height: 1.8; color: rgba(35,32,26,0.85);">
+      Blacksoil International Sdn. Bhd.<br>
+      No.21 Jalan Kamunting 3, Bukit Sentosa, 48300 Rawang, Selangor, Malaysia<br>
+      sales@blacksoilintl.com<br>
+      +60 10-366 6960
+    </p>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer style="background: #1C1A14; color: #ECE4D3;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 72px 40px 40px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; padding-bottom: 48px; border-bottom: 1px solid rgba(236,228,211,0.16);">
+        <div style="grid-column: span 2; min-width: 260px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <img src="logo-light.png" alt="Blacksoil International" style="height: 34px; width: auto; display: block;">
+            <span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.02em;">BLACKSOIL INTERNATIONAL</span>
+          </div>
+          <p style="font-size: 15px; line-height: 1.6; color: rgba(236,228,211,0.66); margin: 20px 0 0; max-width: 40ch;">Advanced ANVIX™ polymer films for agriculture, water management, and environmental protection. Protecting crops, conserving resources, empowering farmers.</p>
+        </div>
+        <div>
+          <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: rgba(236,228,211,0.5); text-transform: uppercase; margin-bottom: 16px;">Products</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="greenhouse-films.html" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Greenhouse Films</a>
+            <a href="mulch-films.html" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Mulch Films</a>
+            <a href="silage-films.html" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Silage Films</a>
+            <a href="low-tunnel-films.html" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Low Tunnel Films</a>
+            <a href="pond-liner-geomembrane.html" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Pond Liner &amp; Geomembrane</a>
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: rgba(236,228,211,0.5); text-transform: uppercase; margin-bottom: 16px;">Company</div>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <a href="index.html#company" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Who We Are</a>
+            <a href="index.html#sectors" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Sectors</a>
+            <a href="index.html#why" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Why Blacksoil</a>
+            <a href="index.html#contact" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Contact</a>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 28px; font-size: 13px; color: rgba(236,228,211,0.5);">
+        <span>© 2026 Blacksoil International · ANVIX™ Agricultural Films</span>
+        <a href="privacy-policy.html" style="font-size: 13px; color: rgba(236,228,211,0.5); text-decoration: none;" style-hover="color: #FFFFFF;">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}"></script>
+</body>
+</html>
