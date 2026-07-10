@@ -16,7 +16,27 @@
     a { color: #4B6A2E; }
     a:hover { color: #3a5423; }
   </style>
+  <script>
+    window.bsOpenLightbox = function(src){
+      var ov = document.getElementById('bs-lightbox');
+      var img = document.getElementById('bs-lightbox-img');
+      if (ov && img) { img.src = src; ov.style.display = 'flex'; }
+    };
+    window.bsCloseLightbox = function(){
+      var ov = document.getElementById('bs-lightbox');
+      if (ov) ov.style.display = 'none';
+    };
+    document.addEventListener('click', function(e){
+      var t = e.target.closest ? e.target.closest('[data-lightbox-src]') : null;
+      if (t) { window.bsOpenLightbox(t.getAttribute('data-lightbox-src')); return; }
+      if (e.target && e.target.id === 'bs-lightbox') { window.bsCloseLightbox(); }
+    });
+  </script>
 </helmet>
+
+<div id="bs-lightbox" style="display: none; position: fixed; inset: 0; background: rgba(20,18,14,0.86); z-index: 999; align-items: center; justify-content: center; padding: 40px; cursor: zoom-out;">
+  <img id="bs-lightbox-img" alt="Enlarged technology image" style="max-width: 92vw; max-height: 92vh; object-fit: contain; border-radius: 6px; box-shadow: 0 30px 80px rgba(0,0,0,0.5); pointer-events: none;">
+</div>
 
 <x-import component-from-global-scope="doc-page" from="./doc-page.js" size="letter" orientation="portrait" margin="0.65in" hint-size="100%,1100px">
 
@@ -31,7 +51,7 @@
       <h1 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 54px; line-height: 1.05; letter-spacing: -0.02em; margin: 0; max-width: 9ch;">Product Catalogue.</h1>
       <p style="font-size: 17px; line-height: 1.6; color: rgba(236,228,211,0.72); max-width: 46ch; margin: 26px 0 0;">Advanced ANVIX™ polymer films for agriculture, water management, and environmental protection — protecting crops, conserving resources, empowering farmers.</p>
     </div>
-    <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: rgba(236,228,211,0.5);">www.blacksoilintl.com &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="91e2f0fdf4e2d1f3fdf0f2fae2fef8fdf8ffe5fdbff2fefc">[email&#160;protected]</a></div>
+    <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: rgba(236,228,211,0.5);">www.blacksoilintl.com &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5320323f362013313f323038203c3a3f3a3d273f7d303c3e">[email&#160;protected]</a></div>
   </div>
 
   <!-- ===================== GREENHOUSE FILMS ===================== -->
@@ -96,7 +116,7 @@
       </div>
     </div>
     <div style="break-inside: avoid; display: grid; grid-template-columns: 220px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(35,32,26,0.14);">
-      <img src="learn-light-diffusion.jpg" alt="Light Diffusion" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px;">
+      <img src="learn-light-diffusion.jpg" alt="Light Diffusion" data-lightbox-src="learn-light-diffusion.jpg" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px; cursor: zoom-in;">
       <div>
         <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 5px;">04 · Light Diffusion</div>
         <p style="font-size: 12px; line-height: 1.5; color: rgba(35,32,26,0.72); margin: 0 0 8px;">Distributes light evenly throughout the canopy to reduce shadows and improve uniformity.</p>
@@ -113,7 +133,7 @@
       </div>
     </div>
     <div style="break-inside: avoid; display: grid; grid-template-columns: 220px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(35,32,26,0.14);">
-      <img src="learn-thermal-ir.jpg" alt="Thermal IR Technology" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px;">
+      <img src="learn-thermal-ir.jpg" alt="Thermal IR Technology" data-lightbox-src="learn-thermal-ir.jpg" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px; cursor: zoom-in;">
       <div>
         <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 5px;">05 · Thermal IR Technology</div>
         <p style="font-size: 12px; line-height: 1.5; color: rgba(35,32,26,0.72); margin: 0 0 8px;">Reduces heat loss during night-time and maintains a stable growing environment.</p>
@@ -130,7 +150,7 @@
       </div>
     </div>
     <div style="break-inside: avoid; display: grid; grid-template-columns: 220px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(35,32,26,0.14);">
-      <img src="learn-anti-drip.jpg" alt="Anti-Drip" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px;">
+      <img src="learn-anti-drip.jpg" alt="Anti-Drip" data-lightbox-src="learn-anti-drip.jpg" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px; cursor: zoom-in;">
       <div>
         <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 5px;">06 · Anti-Drip</div>
         <p style="font-size: 12px; line-height: 1.5; color: rgba(35,32,26,0.72); margin: 0 0 8px;">Transforms droplets into a water film to improve light transmission.</p>
@@ -147,7 +167,7 @@
       </div>
     </div>
     <div style="break-inside: avoid; display: grid; grid-template-columns: 220px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(35,32,26,0.14);">
-      <img src="learn-anti-mist.jpg" alt="Anti-Fog / Anti-Mist" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px;">
+      <img src="learn-anti-mist.jpg" alt="Anti-Fog / Anti-Mist" data-lightbox-src="learn-anti-mist.jpg" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px; cursor: zoom-in;">
       <div>
         <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 5px;">07 · Anti-Fog / Anti-Mist</div>
         <p style="font-size: 12px; line-height: 1.5; color: rgba(35,32,26,0.72); margin: 0 0 8px;">Reduces condensation and maintains greenhouse clarity.</p>
@@ -181,7 +201,7 @@
       </div>
     </div>
     <div style="break-inside: avoid; display: grid; grid-template-columns: 220px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(35,32,26,0.14);">
-      <img src="learn-disease.jpg" alt="Disease Control" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px;">
+      <img src="learn-disease.jpg" alt="Disease Control" data-lightbox-src="learn-disease.jpg" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px; cursor: zoom-in;">
       <div>
         <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 5px;">09 · Disease Control</div>
         <p style="font-size: 12px; line-height: 1.5; color: rgba(35,32,26,0.72); margin: 0 0 8px;">Supports crop protection through specialized film technologies.</p>
@@ -198,7 +218,7 @@
       </div>
     </div>
     <div style="break-inside: avoid; display: grid; grid-template-columns: 220px 1fr; gap: 18px; padding: 16px 0; border-bottom: 1px solid rgba(35,32,26,0.14);">
-      <img src="learn-cooling.jpg" alt="Cooling Effect" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px;">
+      <img src="learn-cooling.jpg" alt="Cooling Effect" data-lightbox-src="learn-cooling.jpg" style="width: 100%; height: 140px; object-fit: contain; object-position: center; background: #FFFFFF; border: 1px solid rgba(35,32,26,0.12); border-radius: 6px; cursor: zoom-in;">
       <div>
         <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 5px;">10 · Cooling Effect</div>
         <p style="font-size: 12px; line-height: 1.5; color: rgba(35,32,26,0.72); margin: 0 0 8px;">Reduces excessive heat build-up inside the greenhouse.</p>
@@ -507,7 +527,7 @@
       </div>
       <div style="break-inside: avoid;">
         <div style="font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(35,32,26,0.5); margin-bottom: 8px;">Contact</div>
-        <p style="font-size: 14px; line-height: 1.7; color: rgba(35,32,26,0.8); margin: 0;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a796b666f794a68666b69617965636663647e6624696567">[email&#160;protected]</a><br>+60 10-366 6960<br>www.blacksoilintl.com</p>
+        <p style="font-size: 14px; line-height: 1.7; color: rgba(35,32,26,0.8); margin: 0;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="087b69646d7b486a64696b637b67616461667c64266b6765">[email&#160;protected]</a><br>+60 10-366 6960<br>www.blacksoilintl.com</p>
       </div>
     </div>
   </div>
