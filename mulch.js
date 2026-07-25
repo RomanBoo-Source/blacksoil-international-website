@@ -32,8 +32,8 @@ window.MULCH_DATA = {
       "name": "Biodegradable Films",
       "tagline": "A sustainable mulch film solution that naturally biodegrades in soil, eliminating film retrieval and reducing plastic waste. Ideal for organic farming, sustainable agriculture, ESG and environmentally conscious projects.",
       "thickness": "12 µm – 25 µm",
-      "colours": "Black",
-      "filmType": "Biodegradable PBAT/PLA",
+      "colours": "Black · Silver / Black",
+      "filmType": "Biodegradable",
       "apps": "Lettuce, spinach, zucchini, cucumbers, eggplants, garlic and other seasonal crops.",
       "img": "biodegradable.jpg"
     },
