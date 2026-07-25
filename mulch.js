@@ -25,7 +25,7 @@ window.MULCH_DATA = {
       "colours": "Black · White (custom)",
       "filmType": "Conventional PE Film",
       "apps": "Vegetables, chilli, tomato, watermelon, melon and other seasonal crops.",
-      "img": "core-thin.jpg"
+      "img": "images/mulch/core-thin.jpg"
     },
     {
       "num": "02",
@@ -35,7 +35,7 @@ window.MULCH_DATA = {
       "colours": "Black · Silver / Black",
       "filmType": "Biodegradable",
       "apps": "Lettuce, spinach, zucchini, cucumbers, eggplants, garlic and other seasonal crops.",
-      "img": "biodegradable.jpg"
+      "img": "images/mulch/biodegradable.jpg"
     },
     {
       "num": "03",
@@ -45,7 +45,7 @@ window.MULCH_DATA = {
       "colours": "Black",
       "filmType": "UV-Stabilised PE Film",
       "apps": "Blueberries, vineyards, orchards, citrus plantations and perennial crops.",
-      "img": "durable.jpg"
+      "img": "images/mulch/durable.jpg"
     },
     {
       "num": "04",
@@ -55,7 +55,7 @@ window.MULCH_DATA = {
       "colours": "Silver / Black · White / Black",
       "filmType": "Reflective PE Film",
       "apps": "Capsicum, tomato, cucumber, berries and premium horticultural crops.",
-      "img": "reflective.jpg"
+      "img": "images/mulch/reflective.jpg"
     }
   ],
   "benefits": [
