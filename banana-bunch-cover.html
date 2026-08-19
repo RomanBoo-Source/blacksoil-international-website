@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
 <script src="image-slot.js"></script>
+<script src="tank-liner.js"></script>
 <style>
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -24,7 +25,7 @@
   .bs-nav-item:hover .bs-dd { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
   .bs-dd::before { content: ""; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
   .bs-dd a { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 9px 12px; font-size: 14px; font-weight: 500; color: rgba(35,32,26,0.78); text-decoration: none; border-radius: 4px; white-space: nowrap; }
-  .bs-dd a:hover { background: rgba(75,106,46,0.12); color: #23201A; }
+  .bs-dd a:hover { background: rgba(78,134,171,0.12); color: #23201A; }
   .bs-sub { position: relative; }
   .bs-flyout { position: absolute; top: -9px; left: calc(100% + 9px); min-width: 200px; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.14); border-radius: 6px; box-shadow: 0 18px 44px rgba(20,18,14,0.16); padding: 8px; opacity: 0; visibility: hidden; transform: translateX(6px); transition: opacity .18s ease, transform .18s ease; z-index: 61; }
   .bs-sub:hover .bs-flyout { opacity: 1; visibility: visible; transform: translateX(0); }
@@ -42,8 +43,8 @@
     .bs-burger[open] > summary span { background: var(--accent); }
     .bs-burger-menu { position: absolute; top: calc(100% + 10px); right: 0; min-width: 230px; max-height: 76vh; overflow-y: auto; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.14); border-radius: 12px; box-shadow: 0 20px 48px rgba(20,18,14,0.2); padding: 10px; display: flex; flex-direction: column; gap: 2px; z-index: 70; }
     .bs-burger-menu a { padding: 11px 14px; font-size: 15px; font-weight: 500; color: #23201A; text-decoration: none; border-radius: 7px; }
-    .bs-burger-menu a:active, .bs-burger-menu a:hover { background: rgba(75,106,46,0.12); }
-    .bs-burger-branch > summary:hover, .bs-burger-branch[open] > summary { background: rgba(75,106,46,0.1); }
+    .bs-burger-menu a:active, .bs-burger-menu a:hover { background: rgba(78,134,171,0.12); }
+    .bs-burger-branch > summary:hover, .bs-burger-branch[open] > summary { background: rgba(78,134,171,0.1); }
     .bs-burger-branch { display: flex; flex-direction: column; border-top: 1px solid rgba(35,32,26,0.1); border-bottom: 1px solid rgba(35,32,26,0.1); margin: 4px 0; padding: 2px 0; }
     .bs-burger-menu .bs-burger-sub { font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); padding: 12px 14px 4px; }
     .bs-burger-menu .bs-burger-cta { background: var(--accent); color: #F5F0E5; text-align: center; margin-top: 8px; font-weight: 600; }
@@ -72,12 +73,6 @@
     [style*="minmax(340px, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="minmax(300px, 1fr)"] { grid-template-columns: 1fr !important; }
     [style*="minmax(250px, 1fr)"] { grid-template-columns: 1fr !important; }
-    #products > div > div { grid-template-columns: 1fr !important; }
-    #products a { grid-column: auto !important; }
-    [style*="min-width: 150px"] { flex: 1 0 100% !important; border-left: none !important; padding: 14px 0 !important; }
-    [style*="minmax(210px, 1fr)"] { grid-template-columns: 1fr !important; }
-    [style*="minmax(210px, 1fr)"] > div { border-left: none !important; border-top: 1px solid rgba(35,32,26,0.16) !important; padding: 24px 0 !important; margin: 0 !important; }
-    [style*="margin-left: 4%"], [style*="margin-left: 13%"], [style*="margin-left: 22%"], [style*="margin-left: 31%"], [style*="margin-left: 40%"] { margin-left: 0 !important; }
   }
 </style>
 </helmet>
@@ -86,14 +81,14 @@
   <!-- ===================== NAV ===================== -->
   <header style="position: sticky; top: 0; z-index: 50; background: rgba(244,238,225,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(35,32,26,0.12);">
     <nav style="max-width: 1240px; margin: 0 auto; padding: 14px 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
-      <a href="#top" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit;">
+      <a href="index.html#top" style="display: flex; align-items: center; gap: 16px; text-decoration: none; color: inherit;">
         <img src="logo-dark.png" alt="Blacksoil International" style="height: 48px; width: auto; display: block;">
         <span style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: 0.01em; line-height: 1;">BLACKSOIL INTERNATIONAL</span>
       </a>
       <div style="display: flex; align-items: center; gap: 28px;">
-        <a href="#company" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Company</a>
+        <a href="index.html#company" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Company</a>
         <div class="bs-nav-item" style="display: inline-flex; align-items: center;">
-        <a href="#products" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;" style-hover="color: #23201A;">Products<svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1.5 6 6.5 11 1.5"></path></svg></a>
+        <a href="index.html#products" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px;" style-hover="color: #23201A;">Products<svg width="10" height="7" viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1.5 6 6.5 11 1.5"></path></svg></a>
         <div class="bs-dd">
           <div class="bs-sub">
             <a href="mulch-films.html">Agriculture Films<svg width="8" height="10" viewBox="0 0 8 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1.5 1 6.5 6 1.5 11"></path></svg></a>
@@ -116,8 +111,8 @@
           </div>
         </div>
       </div>
-        <a href="#sectors" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Sectors</a>
-        <a href="#why" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Why Us</a>
+        <a href="index.html#sectors" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Sectors</a>
+        <a href="index.html#why" style="text-decoration: none; color: rgba(35,32,26,0.72); font-size: 14px; font-weight: 500;" style-hover="color: #23201A;">Why Us</a>
         <a href="#contact" style="text-decoration: none; background: var(--accent); color: #F5F0E5; font-size: 14px; font-weight: 600; padding: 11px 20px; border-radius: var(--radius);" style-hover="filter: brightness(1.08);">Request a Quote</a>
       </div>
     <details class="bs-burger">
@@ -146,344 +141,277 @@
     </nav>
   </header>
 
-  <!-- ===================== HERO ===================== -->
-  <section id="top" style="position: relative; min-height: 90vh; display: flex; align-items: flex-end; overflow: hidden;">
-    <image-slot id="hero-bg" src="hero.jpg" placeholder="ANVIX™ hero — greenhouse or open field photo" style="position: absolute; inset: 0; width: 100%; height: 100%;" fit="cover"></image-slot>
-    <div style="position: absolute; inset: 0; background: linear-gradient(175deg, rgba(24,21,15,0.34) 0%, rgba(24,21,15,0.30) 42%, rgba(24,21,15,0.82) 100%); pointer-events: none;"></div>
-    <div style="position: relative; z-index: 2; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 40px 72px; color: #F5F0E5; animation: bsFadeUp 0.7s ease both;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(245,240,229,0.78); margin-bottom: 26px;"></div>
-      <h1 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(40px, 6vw, 84px); line-height: 0.98; letter-spacing: -0.025em; margin: 0; max-width: 15ch; text-wrap: balance;">Advanced films, engineered for <em style="font-style: italic; font-weight: 500; color: #E9E0CA;">every climate and crop.</em></h1>
-      <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.55; max-width: 56ch; margin: 30px 0 0; color: rgba(245,240,229,0.86);">ANVIX™ polymer films for greenhouse cultivation, soil management, silage storage, water containment, and sustainable farming — tailored to every field and every climate.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px;">
-        <a href="#products" style="text-decoration: none; background: #F5F0E5; color: #23201A; font-weight: 600; font-size: 15px; padding: 16px 26px; border-radius: var(--radius); display: inline-flex; align-items: center; gap: 8px;" style-hover="background: #FFFFFF;">Explore applications →</a>
-        <a href="#contact" style="text-decoration: none; background: transparent; color: #F5F0E5; font-weight: 600; font-size: 15px; padding: 16px 26px; border: 1px solid rgba(245,240,229,0.5); border-radius: var(--radius);" style-hover="border-color: #F5F0E5;">Get in touch</a>
+  <!-- ===================== PRODUCT HERO ===================== -->
+  <section id="top" style="background: #1C1A14; color: #ECE4D3;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 64px 40px 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 56px; align-items: center;">
+      <div style="animation: bsFadeUp 0.6s ease both;">
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: rgba(236,228,211,0.6); margin-bottom: 26px;">
+          <a href="index.html#top" style="color: rgba(236,228,211,0.6); text-decoration: none;" style-hover="color: #ECE4D3;">Home</a> &nbsp;/&nbsp; <a href="index.html#products" style="color: rgba(236,228,211,0.6); text-decoration: none;" style-hover="color: #ECE4D3;">Products</a> &nbsp;/&nbsp; <span style="color: var(--accent);">Banana Bunch Cover</span>
+        </div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #C7D4A6; margin-bottom: 18px;">— ANVIX<sup style="font-size: 0.6em; vertical-align: top; line-height: 1;">™</sup> Product</div>
+        <h1 style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: clamp(36px, 4.8vw, 66px); line-height: 0.98; letter-spacing: -0.025em; margin: 0;">Banana <em style="font-style: italic; font-weight: 500; color: #C7D4A6;">Bunch Cover.</em></h1>
+        <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(20px, 2.1vw, 27px); line-height: 1.15; color: #ECE4D3; margin-top: 18px;">Reliable protection from bunch development to harvest.</div>
+        <p style="font-size: 17px; line-height: 1.6; color: rgba(236,228,211,0.82); margin: 26px 0 0; max-width: 60ch;">Designed for commercial banana plantations, our Banana Bunch Covers provide a practical protective layer around developing banana bunches throughout the growing cycle.</p>
+        <p style="font-size: 16px; line-height: 1.6; color: rgba(236,228,211,0.7); margin: 16px 0 0; max-width: 60ch;">Manufactured from durable polyethylene film and available with different perforation, colour and size options, each cover is made to support consistent field performance, easy handling and efficient plantation use.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px;">
+          <a href="#contact" style="text-decoration: none; background: var(--accent); color: #F5F0E5; font-weight: 600; font-size: 15px; padding: 16px 26px; border-radius: var(--radius);" style-hover="filter: brightness(1.1);">Request a quote →</a>
+          <a href="index.html#products" style="text-decoration: none; background: transparent; color: #ECE4D3; font-weight: 600; font-size: 15px; padding: 16px 26px; border: 1px solid rgba(236,228,211,0.32); border-radius: var(--radius);" style-hover="border-color: #ECE4D3;">All products</a>
+        </div>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 0; margin-top: 56px; border-top: 1px solid rgba(245,240,229,0.28); padding-top: 26px;">
-        <div style="flex: 1; min-width: 150px; padding-right: 28px;">
-          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 32px; line-height: 1;">ISO</div>
-          <div style="font-size: 13px; color: rgba(245,240,229,0.72); margin-top: 8px; line-height: 1.4;">Certified quality<br>management</div>
+      <div style="position: relative; width: 100%; height: 460px;">
+        <image-slot id="banana-hero-img" src="banana-hero.png" placeholder="Banana plantation with covered bunches" style="width: 100%; height: 100%;" shape="rounded" radius="4" fit="cover"></image-slot>
+        <span style="position: absolute; top: 14px; left: 14px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX<sup style="font-size: 0.6em; vertical-align: top; line-height: 1;">™</sup> — Blacksoil International</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OVERVIEW STRIP ===================== -->
+  <section style="background: #1C1A14; color: #ECE4D3; border-top: 1px solid rgba(236,228,211,0.12);">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr);">
+        <div style="padding: 34px 30px; border-left: none;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #C7D4A6; margin-bottom: 10px;">Material</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2;">Blue PE Films / Specialised PP Non-Woven</div>
         </div>
-        <div style="flex: 1; min-width: 150px; padding: 0 28px; border-left: 1px solid rgba(245,240,229,0.28);">
-          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 32px; line-height: 1;">3</div>
-          <div style="font-size: 13px; color: rgba(245,240,229,0.72); margin-top: 8px; line-height: 1.4;">Core product<br>categories</div>
+        <div style="padding: 34px 30px; border-left: 1px solid rgba(236,228,211,0.14);">
+          <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #C7D4A6; margin-bottom: 10px;">Options</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2;">Plain or Perforated</div>
         </div>
-        <div style="flex: 1; min-width: 150px; padding: 0 28px; border-left: 1px solid rgba(245,240,229,0.28);">
-          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 32px; line-height: 1;">Global</div>
-          <div style="font-size: 13px; color: rgba(245,240,229,0.72); margin-top: 8px; line-height: 1.4;">Supply &amp; distribution<br>across markets</div>
+        <div style="padding: 34px 30px; border-left: 1px solid rgba(236,228,211,0.14);">
+          <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #C7D4A6; margin-bottom: 10px;">UV Stabilised</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2;">Up to 6 Months</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== MISSION (dark) ===================== -->
-  <section style="background: #F4EEE1; border-top: 1px solid rgba(35,32,26,0.1);">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 34px;">01 / Our Mission</div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 48px; align-items: end;">
-        <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0; text-wrap: balance;">Protecting crops. Conserving resources. <em style="font-style: italic; font-weight: 500; color: var(--accent);">Empowering farmers.</em></h2>
-        <p style="font-size: 17px; line-height: 1.65; color: rgba(35,32,26,0.66); margin: 0; max-width: 46ch;">Every ANVIX™ film is formulated for real-world field conditions, not just laboratory specifications. From crop production to water management, we engineer materials that perform where they're used — season after season.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== PROBLEM PICKER ===================== -->
-  <sc-if value="{{ showPicker }}" hint-placeholder-val="{{ true }}">
+  <!-- ===================== INTRO ===================== -->
   <section style="background: #F4EEE1;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">02 / Where to start</div>
-      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 14px; max-width: 18ch;">What are you <em style="font-style: italic; font-weight: 500; color: var(--accent);">growing or protecting?</em></h2>
-      <p style="font-size: 17px; line-height: 1.6; color: rgba(35,32,26,0.66); max-width: 52ch; margin: 0 0 44px;">Every operation is different. Start with your challenge — we'll point you to the right film.</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
-        <a href="#products" style="text-decoration: none; color: inherit; background: #F7F1E4; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px; display: flex; flex-direction: column; min-height: 210px;" style-hover="border-color: var(--accent); transform: translateY(-3px);">
-          <span style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">A.</span>
-          <span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 22px; line-height: 1.15; margin-top: 14px;">Protected cultivation</span>
-          <span style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 10px; flex: 1;">Greenhouse and low-tunnel growing that needs a stable microclimate year-round.</span>
-          <span style="font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">See greenhouse films →</span>
-        </a>
-        <a href="#products" style="text-decoration: none; color: inherit; background: #F7F1E4; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px; display: flex; flex-direction: column; min-height: 210px;" style-hover="border-color: var(--accent); transform: translateY(-3px);">
-          <span style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">B.</span>
-          <span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 22px; line-height: 1.15; margin-top: 14px;">Open-field soil</span>
-          <span style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 10px; flex: 1;">Weed control, moisture retention, and temperature regulation across the row.</span>
-          <span style="font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">See mulch films →</span>
-        </a>
-        <a href="#products" style="text-decoration: none; color: inherit; background: #F7F1E4; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px; display: flex; flex-direction: column; min-height: 210px;" style-hover="border-color: var(--accent); transform: translateY(-3px);">
-          <span style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">C.</span>
-          <span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 22px; line-height: 1.15; margin-top: 14px;">Stored fodder</span>
-          <span style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 10px; flex: 1;">Airtight fermentation and long-term fodder preservation for livestock.</span>
-          <span style="font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">See silage films →</span>
-        </a>
-        <a href="#products" style="text-decoration: none; color: inherit; background: #F7F1E4; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px; display: flex; flex-direction: column; min-height: 210px;" style-hover="border-color: var(--accent); transform: translateY(-3px);">
-          <span style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">D.</span>
-          <span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 22px; line-height: 1.15; margin-top: 14px;">Water &amp; containment</span>
-          <span style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 10px; flex: 1;">Impermeable liners for ponds and aquaculture tanks.</span>
-          <span style="font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">See geomembranes →</span>
-        </a>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">01 / Overview</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start;">
+        <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0; max-width: 18ch;">Made for commercial <em style="font-style: italic; font-weight: 500; color: var(--accent);">banana plantations.</em></h2>
+        <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 6px;">
+          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.72); margin: 0;">Banana bunches remain exposed for weeks before harvest. During this period, the fruit can be affected by insects, wind, sunlight, surface abrasion and general field exposure.</p>
+          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.72); margin: 0;">Banana Bunch Covers provide a simple and effective barrier around the developing bunch, helping growers maintain cleaner and better-protected fruit until harvest.</p>
+        </div>
       </div>
     </div>
   </section>
-  </sc-if>
 
-  <!-- ===================== PRODUCTS ===================== -->
-  <section id="products" style="background: #F4EEE1;">
+  <!-- ===================== PE FILM SERIES ===================== -->
+  <section style="background: #F4EEE1; border-top: 1px solid rgba(35,32,26,0.1);">
     <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
-      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 52px;">
-        <div>
-          <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">03 / Products</div>
-          <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0; max-width: 16ch;">Films for <em style="font-style: italic; font-weight: 500; color: var(--accent);">every stage of the field.</em></h2>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">02 / PE Film Series</div>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 24px; max-width: 20ch;">Practical protection for <em style="font-style: italic; font-weight: 500; color: var(--accent);">everyday plantation use.</em></h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center; margin-bottom: 46px;">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.72); margin: 0;">PE Banana Bunch Covers are designed for large-scale commercial banana production where reliable protection, easy handling and competitive cost are essential.</p>
+          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.72); margin: 0;">Lightweight polyethylene film provides a practical barrier around the bunch while remaining easy for plantation workers to install across large growing areas.</p>
         </div>
-        <span style="font-family: 'Space Mono', monospace; font-size: 13px; color: rgba(35,32,26,0);"></span>
+        <div style="position: relative; width: 100%; height: 340px;">
+          <image-slot id="banana-pe-img" src="banana-pe-field.png" placeholder="Blue PE-covered banana bunches in plantation" style="width: 100%; height: 100%;" shape="rounded" radius="4" fit="cover"></image-slot>
+          <span style="position: absolute; top: 14px; left: 14px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX<sup style="font-size: 0.6em; vertical-align: top; line-height: 1;">™</sup> — Blacksoil International</span>
+        </div>
       </div>
-
       <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <a href="greenhouse-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
-          <div style="position: relative; width: 100%; height: 200px;">
-            <image-slot id="prod-greenhouse" src="greenhouse.jpg" placeholder="Greenhouse film — installation photo" style="width: 100%; height: 100%;" fit="cover"></image-slot>
-            <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
-          </div>
-          <div style="padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column;">
-            <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">01</span><span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px;">Greenhouse Films</span></div>
-            <p style="font-size: 14px; line-height: 1.55; color: rgba(35,32,26,0.66); margin: 10px 0 0; flex: 1;">Multi-layer, UV-stabilised films for protected cultivation — engineered for light diffusion, thermal retention, and long service life.</p>
-            <span style="display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">Read more →</span>
-          </div>
-        </a>
-
-        <a href="mulch-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
-          <div style="position: relative; width: 100%; height: 200px;">
-            <image-slot id="prod-mulch" src="mulch.jpg" placeholder="Mulch film — field rows" style="width: 100%; height: 100%;" fit="cover"></image-slot>
-            <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
-          </div>
-          <div style="padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column;">
-            <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">02</span><span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px;">Mulch Films</span></div>
-            <p style="font-size: 14px; line-height: 1.55; color: rgba(35,32,26,0.66); margin: 10px 0 0; flex: 1;">Soil coverage films for weed control, moisture retention, and temperature regulation.</p>
-            <span style="display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">Read more →</span>
-          </div>
-        </a>
-
-        <a href="silage-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
-          <div style="position: relative; width: 100%; height: 200px;">
-            <image-slot id="prod-silage" src="silage.jpg" placeholder="Silage film — wrapped bales" style="width: 100%; height: 100%;" fit="cover"></image-slot>
-            <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
-          </div>
-          <div style="padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column;">
-            <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">03</span><span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px;">Silage Films</span></div>
-            <p style="font-size: 14px; line-height: 1.55; color: rgba(35,32,26,0.66); margin: 10px 0 0; flex: 1;">High-strength stretch and cover films for airtight fermentation and fodder storage.</p>
-            <span style="display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">Read more →</span>
-          </div>
-        </a>
-
-        <a href="low-tunnel-films.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
-          <div style="position: relative; width: 100%; height: 200px;">
-            <image-slot id="prod-lowtunnel" src="lowtunnel.jpg" placeholder="Low tunnel film — protected rows" style="width: 100%; height: 100%;" fit="cover"></image-slot>
-            <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
-          </div>
-          <div style="padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column;">
-            <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">04</span><span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px;">Low Tunnel Films</span></div>
-            <p style="font-size: 14px; line-height: 1.55; color: rgba(35,32,26,0.66); margin: 10px 0 0; flex: 1;">Protective films that create a stable microclimate for earlier growth and stronger establishment.</p>
-            <span style="display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">Read more →</span>
-          </div>
-        </a>
-
-        <a href="pond-liner-geomembrane.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
-          <div style="position: relative; width: 100%; height: 200px;">
-            <image-slot id="prod-geomembrane" src="geomembrane.jpg" placeholder="Pond liner / geomembrane — reservoir" style="width: 100%; height: 100%;" fit="cover"></image-slot>
-            <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
-          </div>
-          <div style="padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column;">
-            <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">05</span><span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px;">Pond &amp; Tank Liners</span></div>
-            <p style="font-size: 14px; line-height: 1.55; color: rgba(35,32,26,0.66); margin: 10px 0 0; flex: 1;">Impermeable, ready-to-install HDPE &amp; LLDPE liners for aquaculture ponds, nursery ponds and biofloc tanks.</p>
-            <span style="display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">Read more →</span>
-          </div>
-        </a>
-
-        <a href="banana-bunch-cover.html" style="text-decoration: none; color: inherit; background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease, border-color 0.35s ease;" style-hover="transform: translateY(-6px); box-shadow: 0 22px 50px rgba(20,18,14,0.16); border-color: var(--accent);">
-          <div style="position: relative; width: 100%; height: 200px;">
-            <image-slot id="prod-banana" src="banana-hero.png" placeholder="Banana bunch cover — plantation" style="width: 100%; height: 100%;" fit="cover"></image-slot>
-            <span style="position: absolute; top: 12px; left: 12px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
-          </div>
-          <div style="padding: 24px 24px 26px; flex: 1; display: flex; flex-direction: column;">
-            <div style="display: flex; align-items: baseline; gap: 10px;"><span style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">06</span><span style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px;">Banana Bunch Cover</span></div>
-            <p style="font-size: 14px; line-height: 1.55; color: rgba(35,32,26,0.66); margin: 10px 0 0; flex: 1;">Protective PE film and PP non-woven covers for developing banana bunches, from bunch development to harvest.</p>
-            <span style="display: inline-block; font-size: 14px; font-weight: 600; color: var(--accent); margin-top: 16px;">Read more →</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== SECTORS ===================== -->
-  <section id="sectors" style="background: #F4EEE1; border-top: 1px solid rgba(35,32,26,0.1);">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">04 / Sectors we serve</div>
-      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 48px; max-width: 16ch;">Where ANVIX™ <em style="font-style: italic; font-weight: 500; color: var(--accent);">goes to work.</em></h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-top: none;">
-        <div style="padding: 30px 24px 30px 0; border-bottom: none;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">01</div>
-          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; margin-top: 12px;">Agriculture</div>
-          <div style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 8px;">Crop protection, soil management &amp; field coverage.</div>
+        <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 12px;">01</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.2; margin-bottom: 10px;">Fruit Surface Protection</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(35,32,26,0.64); margin: 0;">Helps reduce scratching, rubbing and external damage during fruit development.</p>
         </div>
-        <div style="padding: 30px 24px; border-left: 1px solid rgba(35,32,26,0.16); border-bottom: none;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">02</div>
-          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; margin-top: 12px;">Horticulture</div>
-          <div style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 8px;">Greenhouse cultivation &amp; protected growing.</div>
+        <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 12px;">02</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.2; margin-bottom: 10px;">Lightweight & Easy to Install</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(35,32,26,0.64); margin: 0;">Designed for efficient handling and repeated application across commercial plantations.</p>
         </div>
-        <div style="padding: 30px 24px; border-left: 1px solid rgba(35,32,26,0.16); border-bottom: none;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">03</div>
-          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; margin-top: 12px;">Aquaculture</div>
-          <div style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 8px;">Pond &amp; biofloc tank lining solutions.</div>
+        <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 12px;">03</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.2; margin-bottom: 10px;">Controlled Ventilation</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(35,32,26,0.64); margin: 0;">Available with perforation patterns to improve airflow around the developing bunch.</p>
         </div>
-        <div style="padding: 30px 24px; border-left: 1px solid rgba(35,32,26,0.16); border-bottom: none;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">04</div>
-          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; margin-top: 12px;">Livestock</div>
-          <div style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 8px;">Silage protection &amp; fodder preservation.</div>
+        <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 12px;">04</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.2; margin-bottom: 10px;">UV Stabilised Options</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(35,32,26,0.64); margin: 0;">Available with UV protection according to required field exposure.</p>
         </div>
-        <div style="padding: 30px 0 30px 24px; border-left: 1px solid rgba(35,32,26,0.16); border-bottom: none;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 12px; color: var(--accent);">05</div>
-          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; margin-top: 12px;">Field Protection</div>
-          <div style="font-size: 14px; color: rgba(35,32,26,0.62); line-height: 1.5; margin-top: 8px;">Low tunnel &amp; protective microclimate solutions.</div>
+        <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 12px;">05</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.2; margin-bottom: 10px;">Consistent Film Thickness</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(35,32,26,0.64); margin: 0;">Controlled film specifications help provide more consistent handling and performance in the field.</p>
+        </div>
+        <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 28px 26px;">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent); margin-bottom: 12px;">06</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 19px; line-height: 1.2; margin-bottom: 10px;">Commercially Cost-Effective</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(35,32,26,0.64); margin: 0;">A practical solution for plantations requiring dependable bunch protection across large production volumes.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== WHY ===================== -->
-  <section id="why" style="background: #1C1A14; color: #ECE4D3; overflow: visible">
+  <!-- ===================== PP NON-WOVEN INTRO (dark) ===================== -->
+  <section style="background: #1C1A14; color: #ECE4D3;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">05 / Why Blacksoil</div>
-      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 52px; max-width: 15ch;">Engineered for <em style="font-style: italic; font-weight: 500; color: #C7D4A6;">modern agriculture.</em></h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: rgba(236,228,211,0.16);">
-        <div style="background: #1C1A14; padding: 34px 30px 40px;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">01</div>
-          <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px; line-height: 1.2; margin: 16px 0 12px;">Built on field performance</h3>
-          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.72); margin: 0;">Every ANVIX™ film is formulated for real-world agricultural conditions, not just laboratory specifications.</p>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C7D4A6; margin-bottom: 20px;">03 / PP Non-Woven Series</div>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 24px; max-width: 20ch;">Specialised protection for <em style="font-style: italic; font-weight: 500; color: #C7D4A6;">different growing climates.</em></h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(236,228,211,0.75); margin: 0;">Different banana-growing regions experience different environmental conditions. Temperature variation, strong sunlight, humidity, wind and seasonal weather can affect the microclimate surrounding developing banana bunches.</p>
+          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(236,228,211,0.75); margin: 0;">Our PP Non-Woven Banana Bunch Covers provide growers with an alternative protection option for plantations that require greater breathability, additional physical protection or improved insulation compared with conventional film covers.</p>
         </div>
-        <div style="background: #1C1A14; padding: 34px 30px 40px;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">02</div>
-          <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px; line-height: 1.2; margin: 16px 0 12px;">Custom formulations for every climate</h3>
-          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.72); margin: 0;">Tailored film thickness, UV protection, and additive packages to suit specific crops, regions, and growing conditions.</p>
+        <div style="position: relative; width: 100%; height: 340px;">
+          <image-slot id="banana-pp-img" src="banana-pp-field.png" placeholder="White PP non-woven banana bunch cover in plantation" style="width: 100%; height: 100%;" shape="rounded" radius="4" fit="cover"></image-slot>
+          <span style="position: absolute; top: 14px; left: 14px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX<sup style="font-size: 0.6em; vertical-align: top; line-height: 1;">™</sup> — Blacksoil International</span>
         </div>
-        <div style="background: #1C1A14; padding: 34px 30px 40px;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">03</div>
-          <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px; line-height: 1.2; margin: 16px 0 12px;">Designed for global agriculture</h3>
-          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.72); margin: 0;">Engineered to perform across different climates, crops, and growing conditions worldwide.</p>
+      </div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: #C7D4A6; margin: 52px 0 24px;">Designed for Climate-Specific Protection</div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div style="border: 1px solid rgba(236,228,211,0.16); border-radius: var(--radius); padding: 30px 28px; background: rgba(236,228,211,0.03);">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: #C7D4A6; margin-bottom: 14px;">01</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2; margin-bottom: 12px;">Breathable Structure</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.68); margin: 0;">The porous non-woven construction allows greater natural air movement around the bunch, helping reduce excessive moisture accumulation within the cover.</p>
         </div>
-        <div style="background: #1C1A14; padding: 34px 30px 40px;">
-          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: var(--accent);">04</div>
-          <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 21px; line-height: 1.2; margin: 16px 0 12px;">Connecting agriculture &amp; aquaculture</h3>
-          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.72); margin: 0;">From crop production to aquaculture containment, ANVIX™ delivers reliable film solutions across both sectors.</p>
+        <div style="border: 1px solid rgba(236,228,211,0.16); border-radius: var(--radius); padding: 30px 28px; background: rgba(236,228,211,0.03);">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: #C7D4A6; margin-bottom: 14px;">02</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2; margin-bottom: 12px;">Improved Thermal Insulation</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.68); margin: 0;">The fibrous structure provides additional insulation around the developing fruit, suiting plantations exposed to cooler periods or greater day-to-night temperature variation.</p>
+        </div>
+        <div style="border: 1px solid rgba(236,228,211,0.16); border-radius: var(--radius); padding: 30px 28px; background: rgba(236,228,211,0.03);">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: #C7D4A6; margin-bottom: 14px;">03</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2; margin-bottom: 12px;">Sunlight Protection</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.68); margin: 0;">Provides an additional protective barrier against direct sunlight and environmental exposure during fruit development.</p>
+        </div>
+        <div style="border: 1px solid rgba(236,228,211,0.16); border-radius: var(--radius); padding: 30px 28px; background: rgba(236,228,211,0.03);">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: #C7D4A6; margin-bottom: 14px;">04</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2; margin-bottom: 12px;">Soft Fruit Protection</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.68); margin: 0;">The non-woven surface provides a softer protective layer around the bunch, helping reduce direct contact and surface abrasion.</p>
+        </div>
+        <div style="border: 1px solid rgba(236,228,211,0.16); border-radius: var(--radius); padding: 30px 28px; background: rgba(236,228,211,0.03);">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: #C7D4A6; margin-bottom: 14px;">05</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2; margin-bottom: 12px;">Durable Construction</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.68); margin: 0;">Designed to maintain practical strength throughout field handling and installation.</p>
+        </div>
+        <div style="border: 1px solid rgba(236,228,211,0.16); border-radius: var(--radius); padding: 30px 28px; background: rgba(236,228,211,0.03);">
+          <div style="font-family: 'Space Mono', monospace; font-size: 13px; color: #C7D4A6; margin-bottom: 14px;">06</div>
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; line-height: 1.2; margin-bottom: 12px;">Customisable Performance</div>
+          <p style="font-size: 14.5px; line-height: 1.6; color: rgba(236,228,211,0.68); margin: 0;">Available in different GSM, dimensions, colours and functional treatments according to plantation requirements.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== HOW WE WORK ===================== -->
-  <section id="process" style="background: #F4EEE1; border-top: 1px solid rgba(35,32,26,0.1); overflow: hidden;">
+  <!-- ===================== COMPARISON ===================== -->
+  <section style="background: #F4EEE1;">
     <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">06 / How We Work</div>
-      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 20px; max-width: 18ch;">From application to <em style="font-style: italic; font-weight: 500; color: var(--accent);">field support.</em></h2>
-      <p style="font-size: 17px; line-height: 1.6; color: rgba(35,32,26,0.66); max-width: 60ch; margin: 0 0 64px;">From understanding your application to long-term field support, we work closely with our partners to deliver the right film solution for every project.</p>
-
-      <div style="display: flex; flex-direction: column;">
-
-        <!-- STEP 01 -->
-        <div style="display: flex; gap: 26px; align-items: flex-start; margin-left: 4%; padding-bottom: 34px; border-bottom: 1px dashed rgba(35,32,26,0.2);">
-          <div style="flex: none; width: 52px; height: 52px; border-radius: var(--radius); border: 1.5px solid rgba(178,34,34,0.5); display: flex; align-items: center; justify-content: center;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
-          </div>
-          <div style="flex: 1;">
-            <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">Step 01</div>
-            <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.15; margin: 0 0 10px;">Understand Your Application</h3>
-            <p style="font-size: 15px; line-height: 1.6; color: rgba(35,32,26,0.66); margin: 0; max-width: 68ch;">We begin by understanding your crop, cultivation method, climate conditions and application to recommend the most suitable film solution.</p>
-          </div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">04 / Two Materials. Different Requirements.</div>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 46px; max-width: 18ch;">Two materials. <em style="font-style: italic; font-weight: 500; color: var(--accent);">Different growing requirements.</em></h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px;">
+        <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 34px 32px;">
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 24px; margin-bottom: 6px;">PE Film</div>
+          <div style="font-size: 14px; color: rgba(35,32,26,0.6); margin-bottom: 18px;">Best suited for growers looking for:</div>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>High-volume commercial plantation use</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>Lightweight protection</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>Easy installation</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>Controlled perforation</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>Competitive cost per bunch</li>
+          </ul>
         </div>
-
-        <!-- STEP 02 -->
-        <div style="display: flex; gap: 26px; align-items: flex-start; margin-left: 13%; padding: 34px 0; border-bottom: 1px dashed rgba(35,32,26,0.2);">
-          <div style="flex: none; width: 52px; height: 52px; border-radius: var(--radius); border: 1.5px solid rgba(178,34,34,0.5); display: flex; align-items: center; justify-content: center;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-          </div>
-          <div style="flex: 1;">
-            <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">Step 02</div>
-            <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.15; margin: 0 0 10px;">Define the Right Performance</h3>
-            <p style="font-size: 15px; line-height: 1.6; color: rgba(35,32,26,0.66); margin: 0; max-width: 68ch;">Together, we determine the required film specifications, functional additives, UV warranty and performance features to match your growing requirements.</p>
-          </div>
-        </div>
-
-        <!-- STEP 03 -->
-        <div style="display: flex; gap: 26px; align-items: flex-start; margin-left: 22%; padding: 34px 0; border-bottom: 1px dashed rgba(35,32,26,0.2);">
-          <div style="flex: none; width: 52px; height: 52px; border-radius: var(--radius); border: 1.5px solid rgba(178,34,34,0.5); display: flex; align-items: center; justify-content: center;">
-            <img src="process-factory-bold.png" alt="Precision manufacturing" style="width: auto; height: 28px; object-fit: contain;">
-          </div>
-          <div style="flex: 1;">
-            <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">Step 03</div>
-            <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.15; margin: 0 0 10px;">Precision Manufacturing</h3>
-            <p style="font-size: 15px; line-height: 1.6; color: rgba(35,32,26,0.66); margin: 0; max-width: 68ch;">Your selected film solution is produced under controlled manufacturing processes with consistent formulation and strict production quality management.</p>
-          </div>
-        </div>
-
-        <!-- STEP 04 -->
-        <div style="display: flex; gap: 26px; align-items: flex-start; margin-left: 31%; padding: 34px 0; border-bottom: 1px dashed rgba(35,32,26,0.2);">
-          <div style="flex: none; width: 52px; height: 52px; border-radius: var(--radius); border: 1.5px solid rgba(178,34,34,0.5); display: flex; align-items: center; justify-content: center;">
-            <img src="process-truck-bold.png" alt="Verified before delivery" style="width: auto; height: 28px; object-fit: contain;">
-          </div>
-          <div style="flex: 1;">
-            <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">Step 04</div>
-            <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.15; margin: 0 0 10px;">Verified Before Delivery</h3>
-            <p style="font-size: 15px; line-height: 1.6; color: rgba(35,32,26,0.66); margin: 0; max-width: 68ch;">Every shipment is verified against the agreed product specifications and relevant international testing standards before export.</p>
-          </div>
-        </div>
-
-        <!-- STEP 05 -->
-        <div style="display: flex; gap: 26px; align-items: flex-start; margin-left: 40%; padding-top: 34px;">
-          <div style="flex: none; width: 52px; height: 52px; border-radius: var(--radius); border: 1.5px solid rgba(178,34,34,0.5); display: flex; align-items: center; justify-content: center;">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-          </div>
-          <div style="flex: 1;">
-            <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px;">Step 05</div>
-            <h3 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.15; margin: 0 0 10px;">Long-Term Partnership</h3>
-            <p style="font-size: 15px; line-height: 1.6; color: rgba(35,32,26,0.66); margin: 0; max-width: 68ch;">Our commitment continues after delivery. We work closely with our distributors and customers to monitor product performance and provide prompt technical support whenever needed.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===================== COMPANY ===================== -->
-  <section id="company" style="background: #F4EEE1;">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">07 / Company Profile</div>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start;">
-        <div>
-          <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 28px;">Who <em style="font-style: italic; font-weight: 500; color: var(--accent);">we are.</em></h2>
-          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.75); margin: 0 0 18px;"><strong style="font-weight: 700; color: #23201A;">Blacksoil International</strong> is a Malaysian-based materials company dedicated to the development and supply of premium agricultural film solutions for modern agriculture, water management, and environmental protection.</p>
-          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.75); margin: 0 0 18px;">Manufactured with 100% virgin raw materials and advanced multilayer co-extrusion technology, with structures available up to 7 layers, <strong style="font-weight: 700; color: #23201A;">ANVIX™</strong> agricultural films are engineered to deliver superior strength, consistent quality, and reliable field performance across diverse agricultural environments.</p>
-          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.75); margin: 0;">We work closely with distributors, greenhouse specialists, agricultural suppliers, and professional growers worldwide, delivering dependable products and building long-term partnerships based on quality, consistency, and trust.</p>
-          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px;">
-            <span style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.08em; padding: 9px 16px; border: 1px solid rgba(35,32,26,0.2); border-radius: 999px; color: rgba(35,32,26,0.72);">ISO CERTIFIED</span>
-            <span style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.08em; padding: 9px 16px; border: 1px solid rgba(35,32,26,0.2); border-radius: 999px; color: rgba(35,32,26,0.72);">QUALITY ASSURED</span>
-            <span style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.08em; padding: 9px 16px; border: 1px solid rgba(35,32,26,0.2); border-radius: 999px; color: rgba(35,32,26,0.72);">GLOBAL SUPPLY</span>
-          </div>
-        </div>
-        <div style="position: relative; width: 100%; height: 440px;">
-          <image-slot id="company-img" src="company.jpg" placeholder="Large-scale agriculture — Australia reference site" style="width: 100%; height: 100%;" fit="cover"></image-slot>
-          <span style="position: absolute; top: 14px; left: 14px; z-index: 3; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #F5F0E5; background: rgba(20,18,14,0.42); backdrop-filter: blur(4px); padding: 5px 9px; border-radius: 3px; pointer-events: none;">ANVIX™ — Blacksoil International</span>
+        <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); padding: 34px 32px;">
+          <div style="font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 24px; margin-bottom: 6px;">PP Non-Woven</div>
+          <div style="font-size: 14px; color: rgba(35,32,26,0.6); margin-bottom: 18px;">Best suited for growers looking for:</div>
+          <ul style="list-style: none; padding: 0; margin: 0;">
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>Greater breathability</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>Additional insulation</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>More protection under variable climatic conditions</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>A softer protective structure</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid rgba(35,32,26,0.1); font-size: 15px; color: rgba(35,32,26,0.75);"><span style="color: var(--accent); font-weight: 700; margin-right: 10px;">▸</span>Specialised plantation applications</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== CTA BAND ===================== -->
-  <section style="background: var(--accent); color: #F5F0E5;">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 76px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px;">
-      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(26px, 3vw, 40px); line-height: 1.1; letter-spacing: -0.02em; margin: 0; max-width: 20ch;">Let's find the right film for your operation.</h2>
-      <a href="#contact" style="text-decoration: none; background: #1C1A14; color: #F5F0E5; font-weight: 600; font-size: 16px; padding: 18px 30px; border-radius: var(--radius); white-space: nowrap;" style-hover="filter: brightness(1.25);">Request a quote →</a>
+  <!-- ===================== CLOSING ===================== -->
+  <section style="background: #F4EEE1;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">05 / Protection Matched to Your Plantation</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start;">
+        <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0; max-width: 22ch;">Protection matched to <em style="font-style: italic; font-weight: 500; color: var(--accent);">your plantation.</em></h2>
+        <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 6px;">
+          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.72); margin: 0;">There is no single bunch-cover specification suitable for every banana-growing environment.</p>
+          <p style="font-size: 16.5px; line-height: 1.7; color: rgba(35,32,26,0.72); margin: 0;">By offering both conventional PE film and specialised PP non-woven options, we provide plantations with greater flexibility to select a cover according to their climate, production requirements and commercial priorities.</p>
+        </div>
+      </div>
+      <p style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: 20px; color: #23201A; text-align: center; white-space: nowrap; margin: 52px auto 0; max-width: none;">Practical protection. Consistent specifications. Better value for commercial growers.</p>
     </div>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
-  <section id="contact" style="background: #F4EEE1;">
+  <!-- ===================== PRODUCT OPTIONS ===================== -->
+  <section style="background: #EFE7D6; border-top: 1px solid rgba(35,32,26,0.1);">
     <div style="max-width: 1240px; margin: 0 auto; padding: 60px 40px;">
-      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">08 / Enquiries</div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">06 / Product Options</div>
+      <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px; max-width: 16ch;">Product <em style="font-style: italic; font-weight: 500; color: var(--accent);">options.</em></h2>
+      <div style="background: #FBF6EB; border: 1px solid rgba(35,32,26,0.12); border-radius: var(--radius); overflow: hidden;">
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; background: #1C1A14; color: #ECE4D3;">
+          <div style="padding: 18px 24px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(236,228,211,0.7);">Specification</div>
+          <div style="padding: 18px 24px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px;">Blue PE Series</div>
+          <div style="padding: 18px 24px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px;">PP Non-Woven Series</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">Material</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">UV-Stabilised Polyethylene</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">UV-Stabilised PP Spunbond Non-Woven</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">Colour</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">Blue Translucent</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">White</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">Thickness / GSM</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">15 / 20 / 25 / 40 μm / Custom</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">17 / 25 / 30 GSM / Custom</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">Bag Width / Perimeter</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">700 (1.4) / 750 (1.5) / 800 mm (1.6 m)</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">800 mm (1.6 m) / Custom</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">Bag Length</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">1.2 / 1.4 / 1.6 m / Custom</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">1.2 / 1.5 m / Custom</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">Ventilation</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">Standard Perforated / Micro-Perforated</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">Breathable Non-Woven Structure</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">UV Protection</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">Up to 6 Months</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">Up to 6 Months</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">Best Suited For</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">High-volume commercial banana plantations</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">Cooler or variable growing climates</div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; border-top: 1px solid rgba(35,32,26,0.12);">
+          <div style="padding: 15px 24px; font-size: 14px; font-weight: 600; color: #23201A;">Key Advantage</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">Lightweight, practical and cost-effective</div>
+          <div style="padding: 15px 24px; font-size: 14px; color: rgba(35,32,26,0.72);">Breathability and improved thermal insulation</div>
+        </div>
+      </div>
+      <p style="font-size: 13px; color: rgba(35,32,26,0.5); margin: 18px 0 0; line-height: 1.6;">*Non-woven cover dimensions available in standard and custom sizes according to plantation requirements.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT (ENQUIRIES) ===================== -->
+  <section id="contact" style="background: #EFE7D6;">
+    <div style="max-width: 1240px; margin: 0 auto; padding: 64px 40px 116px;">
+      <div style="font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px;">Enquiries</div>
       <h2 style="font-family: 'Archivo', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 50px); line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 48px; max-width: 16ch;">Request a sample <em style="font-style: italic; font-weight: 500; color: var(--accent);">or quote.</em></h2>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; align-items: start;">
 
@@ -743,12 +671,7 @@
               </label>
               <label style="display: flex; flex-direction: column; gap: 7px; font-size: 12px; font-weight: 600; letter-spacing: 0.04em; color: rgba(35,32,26,0.66); text-transform: uppercase;">Product
                 <select style="font-family: 'Hanken Grotesk', sans-serif; font-size: 15px; padding: 12px 14px; border: 1px solid rgba(35,32,26,0.2); border-radius: var(--radius); background: #F4EEE1; color: #23201A;" name="product">
-                  <option>Greenhouse Films</option>
-                  <option>Mulch Films</option>
-                  <option>Silage Films</option>
-                  <option>Low Tunnel Films</option>
-                  <option>Pond Liner &amp; Geomembrane</option>
-                  <option>General Enquiry</option>
+                  <option selected="">Banana Bunch Cover</option>
                 </select>
               </label>
             </div>
@@ -825,9 +748,9 @@
         <div>
           <div style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: rgba(236,228,211,0.5); text-transform: uppercase; margin-bottom: 16px;">Company</div>
           <div style="display: flex; flex-direction: column; gap: 10px;">
-            <a href="#company" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Who We Are</a>
-            <a href="#sectors" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Sectors</a>
-            <a href="#why" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Why Blacksoil</a>
+            <a href="index.html#company" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Who We Are</a>
+            <a href="index.html#sectors" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Sectors</a>
+            <a href="index.html#why" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Why Blacksoil</a>
             <a href="#contact" style="font-size: 14px; color: rgba(236,228,211,0.78); text-decoration: none;" style-hover="color: #FFFFFF;">Contact</a>
           </div>
         </div>
@@ -842,9 +765,8 @@
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{
-  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#4B6A2E&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#4B6A2E&quot;, &quot;#6E6A2A&quot;, &quot;#A9552F&quot;, &quot;#3C5A66&quot;], &quot;section&quot;: &quot;Theme&quot; },
-  &quot;cornerRadius&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 4, &quot;min&quot;: 0, &quot;max&quot;: 20, &quot;step&quot;: 2, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Theme&quot; },
-  &quot;showProblemPicker&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Sections&quot; }
+  &quot;accentColor&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#4B6A2E&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;options&quot;: [&quot;#4B6A2E&quot;, &quot;#4E86AB&quot;, &quot;#1C1A14&quot;], &quot;section&quot;: &quot;Theme&quot; },
+  &quot;cornerRadius&quot;: { &quot;editor&quot;: &quot;range&quot;, &quot;default&quot;: 4, &quot;min&quot;: 0, &quot;max&quot;: 20, &quot;step&quot;: 2, &quot;unit&quot;: &quot;px&quot;, &quot;tsType&quot;: &quot;number&quot;, &quot;section&quot;: &quot;Theme&quot; }
 }">
 class Component extends DCLogic {
   state = { submitted: false };
@@ -856,20 +778,55 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
-    this.applyTheme();
+    this.applyTheme(); this._retry(0);
     try {
-      var u = ['sales'].join(''), d = ['blacksoilintl', 'com'].join('.');
-      var addr = u + '@' + d;
+      var addr = ['sales'].join('') + '@' + ['blacksoilintl','com'].join('.');
       var el = document.getElementById('bs-contact-email');
       if (el) { el.textContent = addr; }
     } catch (e) {}
   }
   componentDidUpdate() { this.applyTheme(); }
 
+  _retry(n) {
+    if (typeof window !== 'undefined' && window.LLDPE_DATA) { this.forceUpdate(); return; }
+    if (n < 50) setTimeout(() => this._retry(n + 1), 100);
+  }
+
   renderVals() {
     const self = this;
+    const D = (typeof window !== 'undefined' && window.LLDPE_DATA) || { hero: [], overview: [], overviewText: [], specBox: [], highlights: [], whyChoose: [], standards: [], thicknessLabels: [], thicknessCards: [], keyFeatures: [], applications: [], compare: [] };
+    const compare = (D.compare || []).map(r => ({
+      prop: r.prop, hdpe: r.hdpe, lldpe: r.lldpe,
+      hdpeColor: r.win === 'hdpe' ? 'var(--accent)' : 'rgba(35,32,26,0.66)',
+      lldpeColor: r.win === 'lldpe' ? 'var(--accent)' : 'rgba(35,32,26,0.66)',
+      hdpeWeight: r.win === 'hdpe' ? '700' : '400',
+      lldpeWeight: r.win === 'lldpe' ? '700' : '400',
+    }));
     return {
-      showPicker: this.props.showProblemPicker ?? true,
+      hero0: D.hero[0] || '',
+      hero1: D.hero[1] || '',
+      overview: (D.overview || []).map((o, i) => ({ ...o, border: i === 0 ? 'none' : '1px solid rgba(236,228,211,0.14)' })),
+      overviewText: D.overviewText || [],
+      specBox: (D.specBox || []).map((s, i, a) => ({ ...s, border: i === a.length - 1 ? 'none' : '1px solid rgba(35,32,26,0.12)' })),
+      highlights: D.highlights || [],
+      whyChoose: D.whyChoose || [],
+      standards: D.standards || [],
+      thicknessLabels: D.thicknessLabels || [],
+      thicknessCards: D.thicknessCards || [],
+      keyFeatures: D.keyFeatures || [],
+      applications: D.applications || [],
+      compare: compare,
+      spec: [
+        { k: 'Material', v: 'Polyethylene' },
+        { k: 'Colour', v: 'Blue / Customised options' },
+        { k: 'Perforation', v: 'Plain or perforated' },
+        { k: 'Film Structure', v: 'Customisable according to plantation requirements' },
+        { k: 'Width', v: 'Customisable' },
+        { k: 'Length', v: 'Customisable' },
+        { k: 'Thickness', v: 'Customisable' },
+        { k: 'UV Stabilisation', v: 'Available' },
+        { k: 'Supply Format', v: 'Individual covers or covers on roll' },
+      ],
       submitted: this.state.submitted,
       notSubmitted: !this.state.submitted,
       formError: this.state.formError || '',
