@@ -32,7 +32,88 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
 <script src="image-slot.js"></script>
-<script src="pond-liner.js"></script>
+<script>
+window.HDPE_DATA = {
+  hero: [
+    "ANVIX™ HDPE Geomembrane is a high-density polyethylene lining solution engineered for high tensile strength, rigidity and long-term chemical resistance in demanding containment applications.",
+    "Manufactured from virgin HDPE resin with carbon black, antioxidants and UV stabilisers, ANVIX™ geomembranes deliver long service life and reliable anti-seepage performance."
+  ],
+  overview: [
+    { label: "Material", val: "Virgin HDPE Resin" },
+    { label: "Technology", val: "Multilayer Co-extrusion" },
+    { label: "Standards", val: "GRI GM13 · ASTM Methods" }
+  ],
+  overviewText: [
+    "ANVIX™ HDPE Geomembrane is manufactured from 100% virgin high-density polyethylene resin, compounded with carbon black, antioxidants and UV stabilisers to deliver a durable, chemically resistant lining material.",
+    "HDPE is suitable for applications requiring high tensile strength, rigidity and resistance to a broad range of chemicals — making it a preferred choice for permanent and semi-permanent containment structures where structural integrity and long-term performance are critical.",
+    "Every roll is produced under controlled manufacturing conditions to ensure consistent thickness, surface quality and mechanical performance in line with internationally recognised standards."
+  ],
+  specBox: [
+    { k: "Raw Material", v: "Virgin HDPE Resin" },
+    { k: "Additives", v: "Carbon Black · Antioxidants · UV Stabilisers" },
+    { k: "Thickness Range", v: "0.5mm – 3.0mm" },
+    { k: "Surface Finish", v: "Smooth / Textured" },
+    { k: "Standards", v: "GRI GM13, ASTM" },
+    { k: "Colour", v: "Black" }
+  ],
+  standards: [
+    { badge: "GRI GM13", title: "Geosynthetic Research Institute Specification", text: "GM13 is the industry-recognised specification for HDPE geomembranes, covering minimum requirements for thickness, tensile properties, tear resistance, puncture resistance and carbon black content." },
+    { badge: "ASTM", title: "ASTM Test Methods", text: "Material properties are evaluated using established ASTM test methods, including tensile properties, tear resistance, puncture resistance, density and dimensional stability." },
+    { badge: "QA / QC", title: "Quality Control Procedures", text: "Each production batch is monitored for thickness uniformity, surface quality and mechanical properties to ensure consistent compliance with specification." },
+    { badge: "UV / OIT", title: "Oxidative Induction Time Testing", text: "OIT testing verifies the effectiveness of antioxidant packages, supporting long-term durability claims for outdoor installations." }
+  ],
+  thicknessLabels: ["0.5mm", "1.0mm", "1.5mm", "2.0mm", "2.5mm", "3.0mm"],
+  thicknessCards: [
+    { val: "0.5 – 0.75mm", use: "Small ponds & light-duty lining" },
+    { val: "1.0mm", use: "Fish & shrimp ponds" },
+    { val: "1.5mm", use: "Irrigation reservoirs" },
+    { val: "2.0mm", use: "Wastewater & industrial ponds" },
+    { val: "2.5 – 3.0mm", use: "Landfills & mining containment" }
+  ],
+  techProps: [
+    { num: "01", title: "High Tensile Strength", desc: "Designed to withstand significant mechanical loads and maintain structural integrity under demanding conditions." },
+    { num: "02", title: "Excellent Rigidity", desc: "Provides dimensional stability and resistance to deformation across varying site conditions." },
+    { num: "03", title: "Chemical Resistance", desc: "Resistant to a broad range of acids, alkalis, salts and industrial chemicals." },
+    { num: "04", title: "UV Stabilised", desc: "Carbon black and UV stabiliser systems protect against long-term sunlight exposure." },
+    { num: "05", title: "Low Permeability", desc: "Creates an effective barrier against water migration and seepage." }
+  ],
+  keyAdv: [
+    { num: "01", title: "Long Service Life", desc: "Designed for long-term outdoor use with excellent weathering and ageing resistance." },
+    { num: "02", title: "Reliable Containment", desc: "Provides dependable anti-seepage performance for ponds, reservoirs and containment facilities." },
+    { num: "03", title: "Environmental Protection", desc: "Helps prevent soil and groundwater contamination through secure containment." },
+    { num: "04", title: "Industry Compliance", desc: "Manufactured to internationally recognised geomembrane standards including ASTM and GRI specifications." },
+    { num: "05", title: "Versatile Applications", desc: "Suitable for aquaculture, water storage, landfill, mining and industrial containment projects." }
+  ],
+  keyFeatures: [
+    { num: "01", title: "Virgin HDPE Resin", desc: "Manufactured from 100% virgin high-density polyethylene for consistent quality and performance." },
+    { num: "02", title: "Carbon Black Additive", desc: "Improves UV resistance and provides long-term protection against sunlight degradation." },
+    { num: "03", title: "Antioxidant Package", desc: "Protects against oxidative degradation, extending the usable life of the membrane." },
+    { num: "04", title: "High Tensile Strength", desc: "Withstands significant mechanical stress without tearing or excessive elongation." },
+    { num: "05", title: "Chemical Resistance", desc: "Suitable for containment of a wide range of liquids, chemicals and effluents." },
+    { num: "06", title: "Dimensional Stability", desc: "Maintains rigidity and shape, reducing wrinkling and material movement after installation." },
+    { num: "07", title: "Low Permeability", desc: "Provides an effective barrier against liquid and gas migration in containment systems." },
+    { num: "08", title: "UV Stabilised", desc: "Formulated for long-term outdoor exposure without significant loss of mechanical properties." },
+    { num: "09", title: "Standards Compliant", desc: "Produced in accordance with GRI GM13 specifications and tested using ASTM methods." }
+  ],
+  compare: [
+    { prop: "Construction", hdpe: "Reinforced polyethylene composite", lldpe: "Monolithic polyethylene", sr: false, sl: false },
+    { prop: "Primary Specification", hdpe: "GSM / reinforcement construction", lldpe: "Thickness (mm)", sr: false, sl: false },
+    { prop: "Cost per m²", hdpe: "Lower", lldpe: "Higher", sr: true, sl: true },
+    { prop: "Tensile Strength", hdpe: "Excellent", lldpe: "Very Good", sr: true, sl: false },
+    { prop: "Tear Resistance", hdpe: "Excellent", lldpe: "Very Good", sr: true, sl: false },
+    { prop: "Puncture Resistance", hdpe: "Excellent", lldpe: "Excellent", sr: true, sl: true },
+    { prop: "Handling Flexibility", hdpe: "Excellent", lldpe: "Excellent", sr: true, sl: true },
+    { prop: "Elongation", hdpe: "Reinforcement-Controlled", lldpe: "Excellent", sr: false, sl: true },
+    { prop: "Dimensional Stability", hdpe: "Excellent", lldpe: "Good", sr: true, sl: false },
+    { prop: "Conformability to Pond Profile", hdpe: "Very Good", lldpe: "Excellent", sr: false, sl: true },
+    { prop: "UV Resistance", hdpe: "Excellent*", lldpe: "Excellent*", sr: false, sl: false },
+    { prop: "Chemical Resistance", hdpe: "Very Good", lldpe: "Excellent", sr: false, sl: true },
+    { prop: "Factory Prefabrication", hdpe: "Excellent", lldpe: "Excellent", sr: true, sl: true },
+    { prop: "Foldability", hdpe: "Excellent", lldpe: "Very Good", sr: true, sl: false },
+    { prop: "Typical Applications", hdpe: "Prefabricated nursery, fish & shrimp grow-out ponds", lldpe: "Prefabricated ponds requiring high elongation or irregular-profile conformity", sr: false, sl: false }
+  ]
+};
+</script>
 <style>
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -549,7 +630,7 @@
           <div style="padding: 18px 24px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em;">RPE</div>
           <div style="padding: 18px 24px; font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.04em; color: rgba(236,228,211,0.82);">LLDPE</div>
         </div>
-        <sc-for list="{{ compare }}" as="r" hint-placeholder-count="11">
+        <sc-for list="{{ compare }}" as="r" hint-placeholder-count="15">
           <div style="display: grid; grid-template-columns: 1.6fr 1fr 1fr; border-top: 1px solid rgba(35,32,26,0.12);">
             <div style="padding: 16px 24px; font-size: 14.5px; font-weight: 600; color: #23201A;">{{ r.prop }}</div>
             <div style="padding: 16px 24px; font-size: 14.5px; color: {{ r.hdpeColor }}; font-weight: {{ r.hdpeWeight }};">{{ r.hdpe }}</div>
@@ -557,6 +638,7 @@
           </div>
         </sc-for>
       </div>
+      <p style="font-size: 13px; line-height: 1.55; color: rgba(35,32,26,0.55); margin: 16px 0 0;">* UV resistance depends on the stabiliser package and exposure conditions.</p>
     </div>
   </section>
 
