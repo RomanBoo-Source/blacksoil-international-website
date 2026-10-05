@@ -61,16 +61,20 @@ window.HDPE_DATA = {
     { num: "09", title: "Standards Compliant", desc: "Produced in accordance with GRI GM13 specifications and tested using ASTM methods." }
   ],
   compare: [
-    { prop: "Tensile Strength", hdpe: "Higher", lldpe: "Moderate", win: "hdpe" },
-    { prop: "Rigidity", hdpe: "High", lldpe: "Low", win: "hdpe" },
-    { prop: "Flexibility", hdpe: "Lower", lldpe: "Higher", win: "lldpe" },
-    { prop: "Conformability to Uneven Ground", hdpe: "Limited", lldpe: "Excellent", win: "lldpe" },
-    { prop: "Chemical Resistance", hdpe: "Excellent", lldpe: "Good", win: "hdpe" },
-    { prop: "UV Resistance", hdpe: "Excellent", lldpe: "Good", win: "hdpe" },
-    { prop: "Seam Strength", hdpe: "Excellent", lldpe: "Good", win: "hdpe" },
-    { prop: "Elongation", hdpe: "Lower", lldpe: "Higher", win: "lldpe" },
-    { prop: "Puncture Resistance", hdpe: "Good", lldpe: "Excellent", win: "lldpe" },
-    { prop: "Cost", hdpe: "Lower", lldpe: "Higher", win: "hdpe" },
-    { prop: "Typical Applications", hdpe: "Landfills, large reservoirs, mining", lldpe: "Ponds with irregular subgrade, smaller installations", win: "" }
+    { prop: "Construction", hdpe: "Reinforced polyethylene composite", lldpe: "Monolithic polyethylene", sr: false, sl: false },
+    { prop: "Primary Specification", hdpe: "GSM / reinforcement construction", lldpe: "Thickness (mm)", sr: false, sl: false },
+    { prop: "Cost per m²", hdpe: "Lower", lldpe: "Higher", sr: true, sl: true },
+    { prop: "Tensile Strength", hdpe: "Excellent", lldpe: "Very Good", sr: true, sl: false },
+    { prop: "Tear Resistance", hdpe: "Excellent", lldpe: "Very Good", sr: true, sl: false },
+    { prop: "Puncture Resistance", hdpe: "Excellent", lldpe: "Excellent", sr: true, sl: true },
+    { prop: "Handling Flexibility", hdpe: "Excellent", lldpe: "Excellent", sr: true, sl: true },
+    { prop: "Elongation", hdpe: "Reinforcement-Controlled", lldpe: "Excellent", sr: false, sl: true },
+    { prop: "Dimensional Stability", hdpe: "Excellent", lldpe: "Good", sr: true, sl: false },
+    { prop: "Conformability to Pond Profile", hdpe: "Very Good", lldpe: "Excellent", sr: false, sl: true },
+    { prop: "UV Resistance", hdpe: "Excellent*", lldpe: "Excellent*", sr: false, sl: false },
+    { prop: "Chemical Resistance", hdpe: "Very Good", lldpe: "Excellent", sr: false, sl: true },
+    { prop: "Factory Prefabrication", hdpe: "Excellent", lldpe: "Excellent", sr: true, sl: true },
+    { prop: "Foldability", hdpe: "Excellent", lldpe: "Very Good", sr: true, sl: false },
+    { prop: "Typical Applications", hdpe: "Prefabricated nursery, fish & shrimp grow-out ponds", lldpe: "Prefabricated ponds requiring high elongation or irregular-profile conformity", sr: false, sl: false }
   ]
 };
