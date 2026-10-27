@@ -1,42 +1,29 @@
-# Blacksoil International — website (single-folder version)
+# ANVIX Full Website — Editable Concept
 
-Every file in this folder sits at the same level — **there are no sub-folders**.
-This is the easiest version to upload to GitHub.
+This is a complete static multi-page website prototype. Open `index.html` to explore it in a browser. Navigation links are relative, so keep all files and the `assets/` folder together. Upload the whole directory to a web host when ready to publish.
 
-## How to put it on GitHub (clean method)
-1. In your repo, delete the old messy files first (all the loose images + pages from the
-   previous upload). Keep only: `CNAME`, `robots.txt`, `sitemap.xml`, and your `favicon`
-   folder if you added them.
-2. Click **Add file → Upload files**.
-3. Select **ALL** the files inside this folder and drag them in together.
-4. Commit. Wait for the deploy to finish (Actions tab → green check).
-5. Open your site and hard-refresh (Ctrl+F5).
+Pages:
+- `index.html`: home with Series hover cards
+- `products.html`: products overview
+- `conventional-pe.html`: conventional PE details and specifications
+- `soil-biodegradable.html`: biodegradable details and evidence cautions
+- `series-core-thin.html`, `series-durable.html`, `series-reflective.html`: dedicated series pages
+- `about.html`: our story
+- `partnerships.html`: grower/manufacturer/distributor collaboration
+- `contact.html`: email-based inquiry form
 
-Because nothing is in a sub-folder, there is no folder structure to preserve — this avoids
-the problem you hit before.
+Editing:
+- CSS: `assets/style.css`
+- Behavior: `assets/main.js`
+- Offline backup illustrations: `assets/*.svg`
+- Remote field photography: links in the bottom of `assets/style.css`
 
-## What's here
-- 8 pages: `index.html` (home) + the 7 product pages
-- `support.js`, `image-slot.js` — required runtime
-- the 7 `*.js` data files (product content)
-- all images (photos, logos, technology images, icons) — all flat
-- `favicon.png` + `apple-touch-icon.png` — browser-tab icon (already linked in every page)
-- `sitemap.xml` — lists all 8 pages for Google (uses https://blacksoilintl.com)
-- `robots.txt` — allows search engines + points to the sitemap
-- `CNAME` — keeps your custom domain **blacksoilintl.com** connected
-- `.nojekyll` — tells GitHub Pages to serve every file as-is
+**Before publication:**
+1. Replace illustrative photos with approved ANVIX or licensed agriculture imagery, and confirm image rights/attribution.
+2. Verify supplier-provided 3-layer co-extrusion, virgin resin documentation and available specs by grade.
+3. Confirm whether any specific soil-biodegradable film is independently certified; do not advertise generic certifications.
+4. Confirm legal entity details, contact email and privacy text.
+5. Connect the contact form to an approved backend/CRM if you need submissions captured. The current form only launches the visitor's email application.
+6. Review that the series names are marketing/navigation categories. Reflective is not mutually exclusive with thin/durable.
 
-## Custom domain note
-`CNAME` contains `www.blacksoilintl.com` — matching your existing setup. Uploading it keeps
-your domain linked, so after the new upload check **Settings → Pages** still shows
-www.blacksoilintl.com as the custom domain (re-enter it there if it was cleared). Your existing
-DNS at the domain registrar does not need to change.
-
-## Favicon note
-This folder includes a fresh `favicon.png` + `apple-touch-icon.png` (your mountain logo on
-brand green), already linked in every page — no sub-folder needed. If you'd rather keep your
-previous favicon design, tell me and I'll match it instead.
-
-## Enquiry form
-Already wired to Web3Forms → delivers to sales@blacksoilintl.com, with validation,
-success/error messages, and an invisible honeypot for spam. No setup needed.
+Built as a STTOKE-inspired editorial aesthetic, not a replica. Desktop cards expand on hover; mobile cards stack.
